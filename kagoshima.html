@@ -5,64 +5,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>鹿児島・桜島 満喫ガイド</title>
     <style>
-        :root { --volcano-red: #c0392b; --sea-blue: #2980b9; }
-        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 900px; margin: 0 auto; background: #fdfaf5; }
-        .back-link { text-decoration: none; color: #3498db; font-weight: bold; }
-        h1 { color: var(--volcano-red); border-bottom: 3px solid var(--volcano-red); }
-        .section-title { background: var(--sea-blue); color: white; padding: 10px; border-radius: 5px; margin-top: 30px; }
-        .hotel-card { background: white; border: 1px solid #ddd; padding: 15px; border-radius: 10px; margin: 15px 0; display: flex; flex-wrap: wrap; gap: 15px; }
-        .hotel-info { flex: 1; min-width: 250px; }
-        .hotel-name { font-weight: bold; font-size: 1.2rem; color: #2c3e50; }
-        .price-tag { display: inline-block; background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-bottom: 5px; }
-        .plan-item { border-left: 4px solid var(--volcano-red); padding-left: 15px; margin: 20px 0; }
+        :root {
+            --volcano-red: #c0392b;
+            --ocean-blue: #2980b9;
+            --gold: #f1c40f;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #fcfcfc;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, var(--volcano-red), #e67e22);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: var(--ocean-blue);
+            font-weight: bold;
+        }
+        h2 {
+            border-left: 6px solid var(--volcano-red);
+            padding-left: 10px;
+            margin-top: 40px;
+            color: var(--volcano-red);
+        }
+        
+        /* ホテルカード */
+        .hotel-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .hotel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .hotel-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .guarantee-badge {
+            background: #fff3f3;
+            color: var(--volcano-red);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border: 1px solid var(--volcano-red);
+        }
+        .price-info {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+        .map-btn {
+            display: inline-block;
+            background: var(--ocean-blue);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .map-btn:hover { background: #1a5276; }
+
+        /* 観光セクション */
+        .spot-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--gold);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-link">← ホームへ戻る</a>
-    <h1>桜島を満喫する鹿児島旅行（5月）</h1>
 
-    <h2 class="section-title">🏨 桜島が見えるおすすめホテル</h2>
+<header>
+    <h1>🌋 鹿児島・桜島 満喫ガイド</h1>
+    <p>5月GW 絶景確約の旅プラン</p>
+</header>
+
+<div class="container">
+    <a href="index.html" class="back-link">← ホーム（平塚ガイド）へ戻る</a>
+
+    <h2>🏨 桜島ビュー確約ホテル</h2>
+    <p>※GW期間中のため、予約時に必ず「桜島側」のプランを選択してください。</p>
 
     <div class="hotel-card">
-        <div class="hotel-info">
-            <span class="price-tag">高級・絶景露天</span>
+        <div class="hotel-header">
             <div class="hotel-name">SHIROYAMA HOTEL kagoshima</div>
-            <p>高台から桜島と市街地を一望。朝食バイキングも日本トップクラスの人気です。</p>
+            <span class="guarantee-badge">桜島ビュー客室あり</span>
         </div>
+        <div class="price-info">予算目安：高級 / 絶景露天風呂あり</div>
+        <p>標高108mの高台から、正面に桜島を望む鹿児島のシンボル的ホテル。露天風呂からの景色は圧巻です。</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=SHIROYAMA+HOTEL+kagoshima" target="_blank" class="map-btn">Googleマップで場所を確認</a>
     </div>
 
     <div class="hotel-card">
-        <div class="hotel-info">
-            <span class="price-tag">中価格帯・駅直結</span>
+        <div class="hotel-header">
             <div class="hotel-name">ソラリア西鉄ホテル鹿児島</div>
-            <p>利便性重視ならここ。桜島側の部屋を指定すれば、窓が額縁のような絶景になります。</p>
+            <span class="guarantee-badge">桜島側確約プランあり</span>
         </div>
+        <div class="price-info">予算目安：中価格帯 / 鹿児島中央駅直結</div>
+        <p>「桜島側」指定プランを選べば、窓一面に広がるパノラマビューが確約。アクセス重視ならここが一番です。</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=ソラリア西鉄ホテル鹿児島" target="_blank" class="map-btn">Googleマップで場所を確認</a>
     </div>
 
     <div class="hotel-card">
-        <div class="hotel-info">
-            <span class="price-tag">リーズナブル・海沿い</span>
-            <div class="hotel-name">ホテルウェルビューかごしま</div>
-            <p>錦江湾が目の前。遮るものがない桜島の雄大な姿を楽しめます。</p>
+        <div class="hotel-header">
+            <div class="hotel-name">鹿児島サンロイヤルホテル</div>
+            <span class="guarantee-badge">桜島側客室指定可</span>
         </div>
+        <div class="price-info">予算目安：中価格帯 / 海沿いの老舗</div>
+        <p>錦江湾のすぐそばに位置し、遮るものなく桜島が見えます。最上階の展望温泉からも桜島が拝めます。</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=鹿児島サンロイヤルホテル" target="_blank" class="map-btn">Googleマップで場所を確認</a>
     </div>
 
-    <h2 class="section-title">🌋 桜島を120%楽しむ観光プラン</h2>
-    
-    <div class="plan-item">
-        <strong>1. 桜島フェリーで「よりみちクルーズ」</strong><br>
-        通常のフェリー（15分）ではなく、50分かけて錦江湾を巡るクルーズがおすすめ。海の上から迫力ある山容を眺められます。
+    <div class="hotel-card">
+        <div class="hotel-header">
+            <div class="hotel-name">ホテルウェルビューかごしま</div>
+            <span class="guarantee-badge">桜島側シングル・ツインあり</span>
+        </div>
+        <div class="price-info">予算目安：リーズナブル / 公営宿舎</div>
+        <p>コスパ重視で「桜島ビュー」を狙うならここ。海に突き出た立地で、どのホテルよりも桜島を近くに感じられます。</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=ホテルウェルビューかごしま" target="_blank" class="map-btn">Googleマップで場所を確認</a>
     </div>
 
-    <div class="plan-item">
-        <strong>2. 湯之平展望所（標高373m）</strong><br>
-        一般人が入れる最高地点。荒々しい山肌が目の前に迫り、火山の息吹を肌で感じられます。
+    <h2>🚢 桜島をしっかり満喫するコツ</h2>
+    <div class="spot-item">
+        <strong>桜島フェリー「よりみちクルーズ」</strong><br>
+        1日1便（11:10発）の50分間クルーズ。通常の定期便では通らないルートを通り、海からの絶景を堪能できます。
+    </div>
+    <div class="spot-item">
+        <strong>サクラジマアイランドビュー</strong><br>
+        桜島内の主要スポットを回る周遊バス。湯之平展望所での停車時間もあり、車がなくても満喫可能です。
+    </div>
+    <div class="spot-item">
+        <strong>溶岩なぎさ公園（足湯）</strong><br>
+        100mの足湯。目の前の桜島を見ながら休憩。タオル持参がおすすめです！
     </div>
 
-    <div class="plan-item">
-        <strong>3. 溶岩なぎさ公園で足湯体験</strong><br>
-        全長100mの長い足湯に浸かりながら、目の前の桜島を眺める贅沢な時間を過ごせます。
-    </div>
+</div>
+
+<footer>
+    © 2026 Kagoshima Travel Guide. リンクはすべてGoogleマップへ。
+</footer>
 
 </body>
 </html>
