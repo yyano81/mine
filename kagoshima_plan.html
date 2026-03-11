@@ -3,62 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鹿児島旅行プラン比較 | 1泊 vs 2泊</title>
+    <title>鹿児島・指宿旅行 提案シミュレーション</title>
     <style>
-        :root { --main-red: #c0392b; --sub-blue: #2980b9; --gold: #d4af37; }
-        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 900px; margin: 0 auto; background: #fdfdfd; }
-        .back-link { text-decoration: none; color: var(--sub-blue); font-weight: bold; }
-        h1 { color: var(--main-red); border-bottom: 3px solid var(--main-red); }
-        .plan-box { background: white; border: 2px solid #eee; border-radius: 12px; padding: 20px; margin-bottom: 30px; }
-        .plan-title { font-size: 1.4rem; font-weight: bold; color: white; background: var(--main-red); padding: 10px; border-radius: 5px; margin: -20px -20px 20px -20px; text-align: center; }
-        .plan-2nights .plan-title { background: var(--sub-blue); }
-        .day { font-weight: bold; color: var(--gold); border-bottom: 1px solid var(--gold); margin-top: 15px; display: block; }
-        .time { font-weight: bold; color: #555; margin-right: 10px; }
-        ul { list-style: none; padding-left: 0; }
-        li { margin-bottom: 10px; padding-left: 20px; position: relative; }
-        li::before { content: "▶"; position: absolute; left: 0; color: #ccc; }
+        :root {
+            --primary-red: #c0392b;
+            --secondary-blue: #2980b9;
+            --accent-gold: #d4af37;
+            --bg-color: #f8f9fa;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-red), #e67e22);
+            color: white;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .container {
+            max-width: 850px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: var(--secondary-blue);
+            font-weight: bold;
+        }
+        
+        /* メイン紹介：シロヤマホテル */
+        .highlight-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            border: 2px solid var(--accent-gold);
+        }
+        .highlight-content { padding: 25px; }
+        .hotel-name { font-size: 1.8rem; font-weight: bold; color: var(--primary-red); margin-bottom: 10px; }
+        .feature-tag {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        /* プラン比較 */
+        .plan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .plan-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border-top: 6px solid var(--primary-red);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .plan-card.two-nights { border-top-color: var(--secondary-blue); }
+        .plan-title { font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; display: block; }
+        
+        /* タイムライン */
+        .timeline { list-style: none; padding: 0; font-size: 0.95rem; }
+        .timeline li { margin-bottom: 8px; padding-left: 20px; position: relative; }
+        .timeline li::before { content: "●"; position: absolute; left: 0; color: #ccc; }
+
+        .map-btn {
+            display: block;
+            text-align: center;
+            background: #34495e;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .map-btn:hover { background: #2c3e50; }
+
+        footer { text-align: center; padding: 40px; color: #999; font-size: 0.8rem; }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-link">← ホームへ戻る</a>
-    <h1>鹿児島・桜島 満喫旅行プラン</h1>
-    <p>5/3 13:55鹿児島空港着 〜 広島へ新幹線帰宅</p>
 
-    <div class="plan-box">
-        <div class="plan-title">【プランA】王道・絶景満喫 1泊2日</div>
-        <span class="day">1日目：ホテルステイと絶景温泉</span>
-        <ul>
-            <li><span class="time">13:55</span> 鹿児島空港着 → 空港バスで中央駅へ</li>
-            <li><span class="time">16:00</span> <strong>城山ホテル鹿児島</strong> チェックイン</li>
-            <li><span class="time">夕方</span> 「さつま乃湯」から夕暮れの桜島を堪能</li>
-            <li><span class="time">夜</span> 天文館またはホテル内で黒豚ディナー</li>
-        </ul>
-        <span class="day">2日目：世界遺産と桜島上陸</span>
-        <ul>
-            <li><span class="time">午前</span> <strong>仙巌園</strong>（名物：両棒餅を食べる）</li>
-            <li><span class="time">午後</span> <strong>桜島フェリー</strong>で桜島へ。足湯体験。</li>
-            <li><span class="time">夕方</span> 鹿児島中央駅でお土産購入</li>
-            <li><span class="time">夜</span> 九州新幹線で広島へ帰宅</li>
-        </ul>
+<header>
+    <h1>🌋 鹿児島・指宿旅行のご提案</h1>
+    <p>5/3(日) 13:55着 鹿児島空港発</p>
+</header>
+
+<div class="container">
+    <a href="index.html" class="back-link">← ポータルへ戻る</a>
+
+    <div class="highlight-card">
+        <div class="highlight-content">
+            <span class="feature-tag">第一候補</span><span class="feature-tag">絶景温泉</span>
+            <div class="hotel-name">SHIROYAMA HOTEL kagoshima</div>
+            <p><strong>【選んだ理由】</strong> 鹿児島で最も有名な絶景ホテル。露天風呂「さつま乃湯」から、目の前に広がる錦江湾と雄大な桜島を堪能できます。部屋が埋まっていても、この温泉だけで行く価値があります。</p>
+            <p>💡 鹿児島中央駅から無料シャトルバスが30分おきに出ているので移動も楽々！</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=ワッツ+平塚市4" target="_blank" class="map-btn">📍 Googleマップでシロヤマホテルを確認</a>
+        </div>
     </div>
 
-    <div class="plan-box plan-2nights">
-        <div class="plan-title">【プランB】指宿まで足を伸ばす 2泊3日</div>
-        <span class="day">1日目：同上（城山ホテル泊）</span>
-        <span class="day">2日目：南の温泉地・指宿へ</span>
-        <ul>
-            <li><span class="time">午前</span> 観光特急「指宿のたまて箱」で指宿へ</li>
-            <li><span class="time">昼</span> <strong>砂むし会館 砂楽</strong>で砂むし風呂体験</li>
-            <li><span class="time">午後</span> 池田湖や開聞岳の絶景ドライブ</li>
-            <li><span class="time">夜</span> 鹿児島市内に戻り、海鮮料理を堪能</li>
-        </ul>
-        <span class="day">3日目：歴史散策とゆったり帰宅</span>
-        <ul>
-            <li><span class="time">午前</span> 維新ふるさと館や西郷隆盛像を巡る</li>
-            <li><span class="time">午後</span> 鹿児島中央駅から新幹線で広島へ</li>
-        </ul>
+    <h2>📅 スケジュール比較：どちらがいい？</h2>
+    <div class="plan-grid">
+        <div class="plan-card">
+            <span class="plan-title" style="color:var(--primary-red);">A: 1泊2日 王道コース</span>
+            <ul class="timeline">
+                <li><small>Day 1:</small> 14時着 → ホテルで温泉三昧 → 天文館で黒豚ディナー</li>
+                <li><small>Day 2:</small> 仙巌園（世界遺産） → 桜島フェリー → 新幹線で広島へ</li>
+            </ul>
+            <p><small>★移動が少なく、ホテルの贅沢な時間を最優先するプラン</small></p>
+        </div>
+
+        <div class="plan-card two-nights">
+            <span class="plan-title" style="color:var(--secondary-blue);">B: 2泊3日 指宿満喫コース</span>
+            <ul class="timeline">
+                <li><small>Day 1:</small> シロヤマホテル泊（絶景温泉）</li>
+                <li><small>Day 2:</small> 指宿へ移動 → <strong>砂むし風呂体験</strong> → 指宿泊</li>
+                <li><small>Day 3:</small> 鹿児島市内に戻り歴史散策 → 新幹線で広島へ</li>
+            </ul>
+            <p><small>★せっかくなので指宿の砂風呂まで楽しむ欲張りプラン</small></p>
+        </div>
     </div>
 
-    <p style="text-align: center; color: #666;">※城山ホテルのシャトルバスは30分間隔で出ています。</p>
+    <h2 style="margin-top: 40px;">🛌 2泊目の指宿ホテル候補</h2>
+    <div class="plan-card" style="border-top-color: #27ae60; margin-bottom: 20px;">
+        <strong>1. 指宿白水館</strong><br>
+        <p><small>砂むし風呂が館内に完備。風呂の種類が多くて退屈しません。</small></p>
+        <a href="https://www.google.com/maps/search/?api=1&query=ワッツ+平塚市1" target="_blank" style="color:var(--secondary-blue);">[マップを確認]</a>
+    </div>
+    <div class="plan-card" style="border-top-color: #e67e22;">
+        <strong>2. 夫婦露天風呂の宿 吟松</strong><br>
+        <p><small>海と一体になれる露天風呂が最高。夫婦水入らずの静かな時間に。</small></p>
+        <a href="https://www.google.com/maps/search/?api=1&query=ワッツ+平塚市2" target="_blank" style="color:var(--secondary-blue);">[マップを確認]</a>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Kagoshima Trip Proposal. Have a nice trip!
+</footer>
+
 </body>
 </html>
