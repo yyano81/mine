@@ -3,25 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>マイ・平塚ライフ 🏠</title>
+    <title>平塚 暮らしのポータル</title>
     <style>
-        body { font-family: sans-serif; background: #f0f2f5; padding: 20px; text-align: center; }
-        h1 { color: #333; margin-bottom: 30px; }
-        .menu-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
-        .menu-item { background: white; padding: 20px; border-radius: 15px; text-decoration: none; color: #333; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 1.1rem; }
-        .menu-item:active { transform: scale(0.98); }
-        .icon { font-size: 1.5rem; }
+        body { font-family: sans-serif; background: #f0f2f5; text-align: center; padding: 50px 20px; }
+        .menu-container { max-width: 600px; margin: 0 auto; display: grid; gap: 20px; }
+        .menu-card { 
+            background: white; padding: 30px; border-radius: 15px; 
+            text-decoration: none; color: #333; font-weight: bold; font-size: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s;
+            border-left: 10px solid #ccc;
+        }
+        .menu-card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .super { border-left-color: #27ae60; }
+        .hyaku-kin { border-left-color: #e67e22; }
+        .icon { font-size: 2rem; display: block; margin-bottom: 10px; }
     </style>
 </head>
 <body>
-    <h1>🏠 マイ・平塚ライフ</h1>
-    <div class="menu-grid">
-        <a href="super.html" class="menu-item">
-            <span class="icon">🛒</span> 平塚スーパー特売ナビ
+
+    <h1>平塚市 買い物ガイド</h1>
+    <div class="menu-container">
+        <a href="super.html" class="menu-card super">
+            <span class="icon">🛒</span>
+            スーパーマーケット一覧
         </a>
-        <div class="menu-item" style="color: #ccc; background: #fafafa;">
-            <span class="icon">✨</span> 次は何を追加しますか？
-        </div>
+
+        <a href="100kin.html" class="menu-card hyaku-kin">
+            <span class="icon">✨</span>
+            100円ショップ一覧
+        </a>
     </div>
+
 </body>
 </html>
