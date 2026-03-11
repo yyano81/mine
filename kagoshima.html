@@ -3,139 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鹿児島・桜島 絶景温泉ガイド</title>
+    <title>鹿児島旅行 日程比較 | 1泊 vs 2泊</title>
     <style>
         :root {
-            --volcano-red: #c0392b;
-            --ocean-blue: #2980b9;
-            --onsen-gold: #d4af37;
+            --primary: #2c3e50;
+            --accent: #e67e22;
+            --bg: #f4f7f6;
+            --day1: #3498db;
+            --day2: #27ae60;
+            --day3: #9b59b6;
         }
-        body {
-            font-family: "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background: linear-gradient(135deg, var(--ocean-blue), #34495e);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            text-decoration: none;
-            color: var(--ocean-blue);
-            font-weight: bold;
-        }
-        h2 {
-            border-left: 6px solid var(--onsen-gold);
-            padding-left: 10px;
-            margin-top: 40px;
-            color: #2c3e50;
-        }
+        body { font-family: sans-serif; background: var(--bg); color: var(--primary); margin: 0; line-height: 1.6; }
+        header { background: var(--primary); color: white; padding: 30px; text-align: center; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .back-link { text-decoration: none; color: #3498db; font-weight: bold; display: inline-block; margin-bottom: 20px; }
         
-        /* 温泉カード */
-        .spa-card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-        }
-        .spa-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
-        .hotel-name { font-size: 1.25rem; font-weight: bold; }
-        .spa-feature {
-            background: #fff9e6;
-            color: #996515;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-        .description { font-size: 0.95rem; margin-bottom: 15px; }
-        .map-btn {
-            display: inline-block;
-            background: #34495e;
-            color: white;
-            text-decoration: none;
-            padding: 8px 18px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-        }
-        .map-btn:hover { opacity: 0.8; }
+        .comparison-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        .comparison-table th { background: #eee; padding: 15px; text-align: center; border-bottom: 2px solid #ddd; }
+        .comparison-table td { padding: 20px; vertical-align: top; border-bottom: 1px solid #eee; width: 50%; }
 
-        footer { text-align: center; padding: 40px; color: #999; font-size: 0.8rem; }
+        .day-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; color: white; font-size: 0.8rem; font-weight: bold; margin-bottom: 8px; }
+        .b-day1 { background: var(--day1); }
+        .b-day2 { background: var(--day2); }
+        .b-day3 { background: var(--day3); }
+
+        .spot-link { color: #2c3e50; text-decoration: underline; font-weight: bold; }
+        .merit-box { background: #fff3e0; padding: 15px; border-radius: 8px; border-left: 5px solid var(--accent); margin-top: 10px; font-size: 0.9rem; }
+        
+        .footer-nav { text-align: center; margin-top: 40px; padding: 20px; background: #fff; border-radius: 12px; }
+        .btn-next { background: var(--accent); color: white; text-decoration: none; padding: 15px 30px; border-radius: 30px; font-weight: bold; display: inline-block; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>♨️ 桜島を望む絶景温泉・ホテル</h1>
-    <p>「お風呂から満喫」をテーマにした厳選ガイド</p>
+    <h1>📅 鹿児島旅行 日程シミュレーション</h1>
+    <p>5/3(日) 13:55 鹿児島空港着をベースに検討</p>
 </header>
 
 <div class="container">
-    <a href="index.html" class="back-link">← ホーム（平塚ガイド）へ戻る</a>
+    <a href="index.html" class="back-link">← ホームへ戻る</a>
 
-    <h2>🚩 露天・展望風呂から桜島が見えるホテル</h2>
-    <p>お部屋が市街地側でも、これらのホテルなら大浴場で最高の景色に出会えます。</p>
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>【A】1泊2日・集中プラン</th>
+                <th>【B】2泊3日・ゆったりプラン</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span class="day-badge b-day1">Day 1</span>
+                    <p>13:55 空港着 → 直行バスで市内へ<br>
+                    夕方：<a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=SHIROYAMA HOTEL kagoshima" class="spot-link">シロヤマホテル</a>で絶景温泉<br>
+                    夜：<a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=天文館" class="spot-link">天文館</a>で黒豚ディナー</p>
+                </td>
+                <td>
+                    <span class="day-badge b-day1">Day 1</span>
+                    <p>13:55 空港着<br>
+                    夕方：市内散策 or <a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=城山公園展望台" class="spot-link">城山展望台</a>から夕景<br>
+                    夜：屋台村などでハシゴ酒</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="day-badge b-day2">Day 2</span>
+                    <p>午前：<a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=仙巌園" class="spot-link">仙巌園</a>で島津家の歴史に触れる<br>
+                    午後：フェリーで<a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=桜島港" class="spot-link">桜島</a>へ（滞在1〜2時間）<br>
+                    夕方：鹿児島中央駅から新幹線で広島へ</p>
+                </td>
+                <td>
+                    <span class="day-badge b-day2">Day 2</span>
+                    <p><strong>★レンタカーで桜島を一周</strong><br>
+                    午前：<a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=有村溶岩展望所" class="spot-link">有村溶岩展望所</a>など絶景巡り<br>
+                    午後：桜島の温泉やカフェでゆったり<br>
+                    夜：市内で鶏刺し・焼酎を楽しむ</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="merit-box">
+                        <strong>メリット：</strong><br>
+                        ・宿泊費が1泊分で済む<br>
+                        ・連休後半を広島でゆっくり過ごせる
+                    </div>
+                </td>
+                <td>
+                    <span class="day-badge b-day3">Day 3</span>
+                    <p>午前：<a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=仙巌園" class="spot-link">仙巌園</a>でお土産購入<br>
+                    ランチ：鹿児島ラーメン<br>
+                    午後：新幹線で広島へ</p>
+                    <div class="merit-box">
+                        <strong>メリット：</strong><br>
+                        ・桜島を車でしっかり回れる<br>
+                        ・移動に追われず、食事を妥協しなくて済む
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-    <div class="spa-card">
-        <div class="spa-header">
-            <div class="hotel-name">SHIROYAMA HOTEL kagoshima</div>
-            <span class="spa-feature">展望露天温泉「さつま乃湯」</span>
-        </div>
-        <p class="description">標高108mからの眺望は鹿児島一。露天風呂に入ると、錦江湾に浮かぶ桜島と市街地が目の前に広がります。特に朝日が昇る時間は神々しい美しさです。</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=キャンドゥ+平塚市8" target="_blank" class="map-btn">Googleマップで見る</a>
+    <div class="footer-nav">
+        <p>日程のイメージは湧いた？次はホテルをチェックしてみよう！</p>
+        <a href="kagoshima_plan.html" class="btn-next">ホテル候補 10選を見る →</a>
     </div>
-
-    <div class="spa-card">
-        <div class="spa-header">
-            <div class="hotel-name">鹿児島サンロイヤルホテル</div>
-            <span class="spa-feature">最上階展望温泉</span>
-        </div>
-        <p class="description">最上階13階に温泉があります。海沿いに位置しているため、お湯に浸かりながら、まるで海の上に浮いているような感覚で桜島を真正面に眺められます。</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=キャンドゥ+平塚市9" target="_blank" class="map-btn">Googleマップで見る</a>
-    </div>
-
-    <div class="spa-card">
-        <div class="spa-header">
-            <div class="hotel-name">ホテルウェルビューかごしま</div>
-            <span class="spa-feature">展望温泉浴場</span>
-        </div>
-        <p class="description">4階にある展望風呂の大きな窓から、大迫力の桜島を間近に楽しめます。リーズナブルな価格帯ながら、景色は一級品。サウナからも景色が楽しめます。</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=ワッツ+平塚市0" target="_blank" class="map-btn">Googleマップで見る</a>
-    </div>
-
-    <h2>💡 お風呂で桜島を120%楽しむコツ</h2>
-    <ul>
-        <li><strong>朝風呂を狙う：</strong> 桜島越しに朝日が昇る光景は、早起きする価値があります。</li>
-        <li><strong>夕暮れのシルエット：</strong> 太陽が沈み、桜島が黒いシルエットに変わっていくマジックアワーも格別です。</li>
-        <li><strong>噴煙を観察：</strong> 火山ならではの白い煙がたなびく様子は、温泉に浸かりながらいつまでも眺めていられます。</li>
-    </ul>
-
 </div>
-
-<footer>
-    © 2026 Kagoshima Onsen Guide. リンクはGoogleマップへ。
-</footer>
 
 </body>
 </html>
