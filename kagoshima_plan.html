@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鹿児島・指宿旅行 プラン提案</title>
+    <title>鹿児島旅行 絶景＆コスパ重視プラン</title>
     <style>
         :root {
             --primary-red: #c0392b;
@@ -19,9 +19,9 @@
             color: #333;
         }
         header {
-            background: linear-gradient(135deg, var(--primary-red), #e67e22);
+            background: linear-gradient(135deg, var(--secondary-blue), #34495e);
             color: white;
-            padding: 2.5rem 1rem;
+            padding: 2rem 1rem;
             text-align: center;
         }
         .container {
@@ -36,59 +36,57 @@
             color: var(--secondary-blue);
             font-weight: bold;
         }
+        
+        /* メイン：シロヤマホテル */
         .highlight-card {
             background: white;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             margin-bottom: 40px;
-            border: 2px solid var(--accent-gold);
+            border-left: 10px solid var(--accent-gold);
         }
         .highlight-content { padding: 25px; }
-        .hotel-name { font-size: 1.8rem; font-weight: bold; color: var(--primary-red); margin-bottom: 10px; }
-        .feature-tag {
-            display: inline-block;
-            background: var(--accent-gold);
+        .hotel-name { font-size: 1.5rem; font-weight: bold; color: var(--primary-red); }
+        .price-badge {
+            background: #e74c3c;
             color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-right: 10px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
             font-weight: bold;
         }
-        .plan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        
+        /* 宿泊候補カード */
         .plan-card {
             background: white;
             padding: 20px;
             border-radius: 12px;
-            border-top: 6px solid var(--primary-red);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
         }
-        .plan-card.two-nights { border-top-color: var(--secondary-blue); }
-        .plan-title { font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; display: block; }
-        .timeline { list-style: none; padding: 0; font-size: 0.95rem; }
-        .timeline li { margin-bottom: 8px; padding-left: 20px; position: relative; }
-        .timeline li::before { content: "●"; position: absolute; left: 0; color: #ccc; }
-        .map-btn {
-            display: block;
-            text-align: center;
-            background: #34495e;
-            color: white;
+        .map-link {
+            color: var(--secondary-blue);
             text-decoration: none;
-            padding: 12px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .recommend-box {
+            background: #fff3f3;
+            padding: 15px;
             border-radius: 8px;
             margin-top: 20px;
-            font-weight: bold;
+            border: 1px solid #fab1a0;
         }
-        footer { text-align: center; padding: 40px; color: #999; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>🌋 鹿児島・指宿旅行のご提案</h1>
-    <p>5/3(日) 13:55着 鹿児島空港発</p>
+    <h1>🌋 鹿児島 絶景＆コスパ旅行プラン</h1>
+    <p>5/3(日) 13:55着 〜 広島へ新幹線帰宅</p>
 </header>
 
 <div class="container">
@@ -96,50 +94,42 @@
 
     <div class="highlight-card">
         <div class="highlight-content">
-            <span class="feature-tag">第一候補</span><span class="feature-tag">絶景露天風呂</span>
-            <div class="hotel-name">SHIROYAMA HOTEL kagoshima</div>
-            <p><strong>【ここがポイント】</strong> 鹿児島の迎賓館。お部屋が埋まっていても、「さつま乃湯」から望む桜島の絶景は宿泊者だけの特権です。1泊2日の場合も、ここに泊まれば間違いありません。</p>
-            <a href="https://maps.app.goo.gl/WqG25V6V7N7R5V9Q8" target="_blank" class="map-btn">📍 Googleマップでシロヤマホテルを確認</a>
+            <div class="hotel-name">1泊目：SHIROYAMA HOTEL kagoshima</div>
+            <p><strong>【必修スポット】</strong> ここは少し予算をかけても、露天風呂からの景色を優先。5/3の到着後、まずはここの温泉で桜島と対面するのが最高のスタートです。</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=SHIROYAMA+HOTEL+kagoshima" target="_blank" class="map-link">📍 Googleマップを確認</a>
         </div>
     </div>
 
-    <h2>📅 プラン比較</h2>
-    <div class="plan-grid">
-        <div class="plan-card">
-            <span class="plan-title" style="color:var(--primary-red);">A: 1泊2日 集中コース</span>
-            <ul class="timeline">
-                <li><small>Day 1:</small> 到着後ホテルへ。温泉と夜景を楽しむ</li>
-                <li><small>Day 2:</small> 仙巌園と桜島を観光し、新幹線で広島へ</li>
-            </ul>
-        </div>
-        <div class="plan-card two-nights">
-            <span class="plan-title" style="color:var(--secondary-blue);">B: 2泊3日 指宿欲張りコース</span>
-            <ul class="timeline">
-                <li><small>Day 1:</small> シロヤマホテル泊（絶景温泉）</li>
-                <li><small>Day 2:</small> 指宿へ移動。<strong>砂むし風呂</strong>を体験して指宿泊</li>
-                <li><small>Day 3:</small> 鹿児島市内に戻り散策後、新幹線で帰路へ</li>
-            </ul>
-        </div>
+    <h2>🛌 2泊目の宿泊候補（GW中でも3万円台以下狙い）</h2>
+    <p>「景色が良い」かつ「安め」を基準に選びました。</p>
+
+    <div class="plan-card">
+        <strong>1. ホテルウェルビューかごしま</strong> <span class="price-badge">コスパ最強</span>
+        <p>錦江湾のすぐ目の前。お部屋や展望風呂から、遮るもののない大迫力の桜島が見えます。公営の宿の流れを汲んでいるため、GWでも比較的リーズナブルです。</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=ホテルウェルビューかごしま" target="_blank" class="map-link">📍 Googleマップで確認</a>
     </div>
 
-    <h2 style="margin-top: 40px;">🛌 2泊目の指宿ホテル（砂むし完備）</h2>
-    
-    <div class="plan-card" style="border-top-color: #27ae60;">
-        <strong>1. 指宿白水館</strong><br>
-        <p><small>指宿最大級の温泉施設。館内で砂むしができるので移動いらず。</small></p>
-        <a href="https://maps.app.goo.gl/9uK5mXU6ZJ4Z6Y7X9" target="_blank" style="color:var(--secondary-blue); font-weight: bold;">[Googleマップで見る]</a>
+    <div class="plan-card">
+        <strong>2. 鹿児島サンロイヤルホテル</strong> <span class="price-badge">絶景展望風呂</span>
+        <p>老舗ですが、最上階の展望温泉からの桜島は絶品。シロヤマホテルより価格が抑えやすく、海沿いの景色を満喫できます。</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=鹿児島サンロイヤルホテル" target="_blank" class="map-link">📍 Googleマップで確認</a>
     </div>
 
-    <div class="plan-card" style="border-top-color: #e67e22;">
-        <strong>2. 夫婦露天風呂の宿 吟松</strong><br>
-        <p><small>海を眺める露天風呂が抜群の雰囲気。夫婦での特別な滞在に。</small></p>
-        <a href="https://maps.app.goo.gl/N8V9v8X8X8X8X8X8X" target="_blank" style="color:var(--secondary-blue); font-weight: bold;">[Googleマップで見る]</a>
+    <div class="plan-card">
+        <strong>3. アートホテル鹿児島</strong> <span class="price-badge">桜島側指定あり</span>
+        <p>鴨池港の近くで、桜島を正面に望む立地。市街地から少し離れる分、GWでも予算内に収まりやすい穴場です。</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=アートホテル鹿児島" target="_blank" class="map-link">📍 Googleマップで確認</a>
+    </div>
+
+    <div class="recommend-box">
+        <strong>💡 ご主人への提案ポイント</strong><br>
+        「2泊とも鹿児島市内にすれば、荷物を持って指宿まで移動する手間がなくなるよ！その分、2日目はレンタカーを借りて、好きな時に桜島や美味しい黒豚のお店をドライブで回るのが一番安くて自由度が高いよ」と伝えてみてください。
     </div>
 
 </div>
 
 <footer>
-    © 2026 Kagoshima Trip Plan.
+    © 2026 Kagoshima Budget & View Plan.
 </footer>
 
 </body>
