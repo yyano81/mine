@@ -3,50 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>平塚 暮らしのポータル</title>
+    <title>平塚＆旅のポータルサイト</title>
     <style>
-        body { font-family: sans-serif; background: #f0f2f5; text-align: center; padding: 50px 20px; }
-        .menu-container { max-width: 600px; margin: 0 auto; display: grid; gap: 20px; }
-        .menu-card { 
-            background: white; padding: 30px; border-radius: 15px; 
-            text-decoration: none; color: #333; font-weight: bold; font-size: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s;
-            border-left: 10px solid #ccc;
+        :root {
+            --primary-color: #2c3e50;
+            --super-color: #27ae60;
+            --shop-color: #e67e22;
+            --drug-color: #e74c3c;
+            --travel-color: #c0392b;
+            --bg-color: #f4f7f6;
         }
-        .menu-card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
-        .super { border-left-color: #27ae60; }
-        .hyaku-kin { border-left-color: #e67e22; }
-        .icon { font-size: 2rem; display: block; margin-bottom: 10px; }
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            margin-bottom: 30px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .menu-card {
+            background: white;
+            text-decoration: none;
+            color: inherit;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-top: 8px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+        .icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .title { font-size: 1.4rem; font-weight: bold; margin-bottom: 10px; }
+        .desc { font-size: 0.9rem; color: #666; }
+
+        /* カテゴリー別の色設定 */
+        .super { border-top-color: var(--super-color); }
+        .hyaku-kin { border-top-color: var(--shop-color); }
+        .drugstore { border-top-color: var(--drug-color); }
+        .kagoshima { border-top-color: var(--travel-color); }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            color: #999;
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 <body>
 
-    <h1>平塚市 買い物ガイド</h1>
-    <div class="menu-container">
+<header>
+    <h1>My Life & Travel Portal</h1>
+    <p>平塚の暮らしと旅行の情報まとめ</p>
+</header>
+
+<div class="container">
+    <div class="menu-grid">
+        
         <a href="super.html" class="menu-card super">
             <span class="icon">🛒</span>
-            スーパーマーケット一覧
+            <span class="title">スーパー一覧</span>
+            <span class="desc">平塚市内の主要スーパー・マップ</span>
         </a>
 
         <a href="100kin.html" class="menu-card hyaku-kin">
             <span class="icon">✨</span>
-            100円ショップ一覧
-        </a>
-        
-        <a href="drugstore.html" class="menu-card drugstore" style="border-left-color: #e74c3c;">
-            <span class="icon">💊</span>
-            ドラッグストアお得ガイド
-        </a>
-        
-        <a href="kagoshima.html" class="menu-card kagoshima" style="border-left-color: #c0392b;">
-            <span class="icon">🌋</span>
-            鹿児島・桜島 満喫ガイド
+            <span class="title">100均一覧</span>
+            <span class="desc">ダイソー・セリアなどの店舗情報</span>
         </a>
 
-        
-        
+        <a href="drugstore.html" class="menu-card drugstore">
+            <span class="icon">💊</span>
+            <span class="title">ドラッグストア</span>
+            <span class="desc">お得な日・ポイント活用ガイド</span>
+        </a>
+
+        <a href="kagoshima.html" class="menu-card kagoshima">
+            <span class="icon">🌋</span>
+            <span class="title">鹿児島・桜島</span>
+            <span class="desc">桜島ビュー確約ホテル＆観光プラン</span>
+        </a>
 
     </div>
+</div>
+
+<footer>
+    © 2026 My GitHub Pages. All links checked.
+</footer>
 
 </body>
 </html>
