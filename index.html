@@ -3,70 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>平塚＆旅のポータルサイト</title>
+    <title>My Life & Travel Portal</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --super-color: #27ae60;
-            --shop-color: #e67e22;
-            --drug-color: #e74c3c;
-            --travel-color: #c0392b;
-            --bg-color: #f4f7f6;
+            --primary-bg: #f0f2f5;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --accent-blue: #3498db;
+            --accent-green: #27ae60;
+            --accent-orange: #e67e22;
+            --accent-red: #e74c3c;
+            --accent-purple: #9b59b6;
         }
         body {
-            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
             margin: 0;
-            background-color: var(--bg-color);
-            color: #333;
-            text-align: center;
+            padding: 0;
         }
         header {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
             color: white;
-            padding: 2rem 1rem;
-            margin-bottom: 30px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 15px;
         }
-        .menu-grid {
+        .section-title {
+            font-size: 1.2rem;
+            margin: 30px 0 15px 5px;
+            border-left: 5px solid var(--accent-blue);
+            padding-left: 10px;
+        }
+        
+        /* タイル型レイアウト */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
         }
-        .menu-card {
-            background: white;
+        .tile {
+            background: var(--card-bg);
             text-decoration: none;
             color: inherit;
-            padding: 30px 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border-top: 8px solid #ccc;
+            padding: 25px 15px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
+            border-bottom: 4px solid #ddd;
         }
-        .menu-card:hover {
+        .tile:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
-        .icon { font-size: 2.5rem; margin-bottom: 15px; }
-        .title { font-size: 1.4rem; font-weight: bold; margin-bottom: 10px; }
-        .desc { font-size: 0.9rem; color: #666; }
+        .icon { font-size: 2.2rem; margin-bottom: 10px; }
+        .tile-title { font-weight: bold; font-size: 1.1rem; }
 
-        /* カテゴリー別の色設定 */
-        .super { border-top-color: var(--super-color); }
-        .hyaku-kin { border-top-color: var(--shop-color); }
-        .drugstore { border-top-color: var(--drug-color); }
-        .kagoshima { border-top-color: var(--travel-color); }
+        /* カテゴリー別の色 */
+        .c-life { border-bottom-color: var(--accent-green); }
+        .c-shop { border-bottom-color: var(--accent-orange); }
+        .c-travel { border-bottom-color: var(--accent-red); }
+        .c-plan { border-bottom-color: var(--accent-purple); }
 
         footer {
-            margin-top: 50px;
-            padding: 20px;
-            color: #999;
+            text-align: center;
+            padding: 50px 20px;
+            color: #95a5a6;
             font-size: 0.8rem;
         }
     </style>
@@ -74,49 +85,45 @@
 <body>
 
 <header>
-    <h1>My Life & Travel Portal</h1>
-    <p>平塚の暮らしと旅行の情報まとめ</p>
+    <h1>My Life & Travel Archive</h1>
+    <p>日々の暮らしと、旅の記録</p>
 </header>
 
 <div class="container">
-    <div class="menu-grid">
-        
-        <a href="super.html" class="menu-card super">
+
+    <div class="section-title">平塚 暮らしの情報</div>
+    <div class="grid">
+        <a href="super.html" class="tile c-life">
             <span class="icon">🛒</span>
-            <span class="title">スーパー一覧</span>
-            <span class="desc">平塚市内の主要スーパー・マップ</span>
+            <span class="tile-title">スーパー</span>
         </a>
-
-        <a href="100kin.html" class="menu-card hyaku-kin">
+        <a href="100kin.html" class="tile c-shop">
             <span class="icon">✨</span>
-            <span class="title">100均一覧</span>
-            <span class="desc">ダイソー・セリアなどの店舗情報</span>
+            <span class="tile-title">100円ショップ</span>
         </a>
-
-        <a href="drugstore.html" class="menu-card drugstore">
+        <a href="drugstore.html" class="tile c-shop">
             <span class="icon">💊</span>
-            <span class="title">ドラッグストア</span>
-            <span class="desc">お得な日・ポイント活用ガイド</span>
+            <span class="tile-title">ドラッグストア</span>
         </a>
-
-        <a href="kagoshima.html" class="menu-card kagoshima">
-            <span class="icon">🌋</span>
-            <span class="title">鹿児島・桜島</span>
-            <span class="desc">桜島ビュー確約ホテル＆観光プラン</span>
-        </a>
-        
-        <a href="kagoshima_plan.html" class="menu-card" style="border-top-color: #d4af37;">
-            <span class="icon">📅</span>
-            <span class="title">鹿児島旅行プラン</span>
-            <span class="desc">1泊 vs 2泊のスケジュール比較</span>
-        </a>
-
-
     </div>
+
+    <div class="section-title">旅行・お出かけ</div>
+    <div class="grid">
+        <a href="kagoshima.html" class="tile c-travel">
+            <span class="icon">🌋</span>
+            <span class="tile-title">鹿児島・温泉</span>
+        </a>
+        <a href="kagoshima_plan.html" class="tile c-plan">
+            <span class="icon">📅</span>
+            <span class="tile-title">鹿児島プラン</span>
+        </a>
+        </div>
+
 </div>
 
 <footer>
-    © 2026 My GitHub Pages. All links checked.
+    © 2026 Powered by GitHub Pages. <br>
+    お気に入りの情報をどんどん書き溜めていきましょう！
 </footer>
 
 </body>
