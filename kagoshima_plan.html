@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鹿児島旅行プラン比較 | 1泊 vs 2泊</title>
+    <style>
+        :root { --main-red: #c0392b; --sub-blue: #2980b9; --gold: #d4af37; }
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 900px; margin: 0 auto; background: #fdfdfd; }
+        .back-link { text-decoration: none; color: var(--sub-blue); font-weight: bold; }
+        h1 { color: var(--main-red); border-bottom: 3px solid var(--main-red); }
+        .plan-box { background: white; border: 2px solid #eee; border-radius: 12px; padding: 20px; margin-bottom: 30px; }
+        .plan-title { font-size: 1.4rem; font-weight: bold; color: white; background: var(--main-red); padding: 10px; border-radius: 5px; margin: -20px -20px 20px -20px; text-align: center; }
+        .plan-2nights .plan-title { background: var(--sub-blue); }
+        .day { font-weight: bold; color: var(--gold); border-bottom: 1px solid var(--gold); margin-top: 15px; display: block; }
+        .time { font-weight: bold; color: #555; margin-right: 10px; }
+        ul { list-style: none; padding-left: 0; }
+        li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+        li::before { content: "▶"; position: absolute; left: 0; color: #ccc; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← ホームへ戻る</a>
+    <h1>鹿児島・桜島 満喫旅行プラン</h1>
+    <p>5/3 13:55鹿児島空港着 〜 広島へ新幹線帰宅</p>
+
+    <div class="plan-box">
+        <div class="plan-title">【プランA】王道・絶景満喫 1泊2日</div>
+        <span class="day">1日目：ホテルステイと絶景温泉</span>
+        <ul>
+            <li><span class="time">13:55</span> 鹿児島空港着 → 空港バスで中央駅へ</li>
+            <li><span class="time">16:00</span> <strong>城山ホテル鹿児島</strong> チェックイン</li>
+            <li><span class="time">夕方</span> 「さつま乃湯」から夕暮れの桜島を堪能</li>
+            <li><span class="time">夜</span> 天文館またはホテル内で黒豚ディナー</li>
+        </ul>
+        <span class="day">2日目：世界遺産と桜島上陸</span>
+        <ul>
+            <li><span class="time">午前</span> <strong>仙巌園</strong>（名物：両棒餅を食べる）</li>
+            <li><span class="time">午後</span> <strong>桜島フェリー</strong>で桜島へ。足湯体験。</li>
+            <li><span class="time">夕方</span> 鹿児島中央駅でお土産購入</li>
+            <li><span class="time">夜</span> 九州新幹線で広島へ帰宅</li>
+        </ul>
+    </div>
+
+    <div class="plan-box plan-2nights">
+        <div class="plan-title">【プランB】指宿まで足を伸ばす 2泊3日</div>
+        <span class="day">1日目：同上（城山ホテル泊）</span>
+        <span class="day">2日目：南の温泉地・指宿へ</span>
+        <ul>
+            <li><span class="time">午前</span> 観光特急「指宿のたまて箱」で指宿へ</li>
+            <li><span class="time">昼</span> <strong>砂むし会館 砂楽</strong>で砂むし風呂体験</li>
+            <li><span class="time">午後</span> 池田湖や開聞岳の絶景ドライブ</li>
+            <li><span class="time">夜</span> 鹿児島市内に戻り、海鮮料理を堪能</li>
+        </ul>
+        <span class="day">3日目：歴史散策とゆったり帰宅</span>
+        <ul>
+            <li><span class="time">午前</span> 維新ふるさと館や西郷隆盛像を巡る</li>
+            <li><span class="time">午後</span> 鹿児島中央駅から新幹線で広島へ</li>
+        </ul>
+    </div>
+
+    <p style="text-align: center; color: #666;">※城山ホテルのシャトルバスは30分間隔で出ています。</p>
+</body>
+</html>
