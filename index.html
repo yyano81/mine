@@ -3,41 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>平塚スーパー完全攻略マップ 🛒</title>
+    <title>平塚スーパーチラシMAP 🛒</title>
     <style>
-        :root { --main-color: #28a745; --accent-color: #ff6b6b; --map-color: #4285F4; --chirashi-color: #ff9800; }
-        body { font-family: "Helvetica Neue", Arial, sans-serif; background: #f8f9fa; padding: 15px; margin: 0; color: #333; }
+        :root { --main-color: #e63946; --map-color: #4285F4; --chirashi-color: #ff9800; }
+        body { font-family: "Helvetica Neue", Arial, sans-serif; background: #fdfdfd; padding: 15px; margin: 0; color: #333; }
         h1 { font-size: 1.4rem; text-align: center; color: white; background: var(--main-color); padding: 15px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .shop-group { background: #fff; border-radius: 15px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border: 1px solid #eee; }
-        .brand-header { display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #f0f0f0; padding-bottom: 8px; margin-bottom: 10px; }
-        .brand-name { font-weight: bold; font-size: 1.15rem; color: #1a1a1a; display: flex; align-items: center; gap: 5px; }
-        .feature-tag { background: #e9ecef; color: #495057; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; }
-        .sale-info { background: #fff9db; border-left: 4px solid #fab005; padding: 10px; border-radius: 4px; margin: 10px 0; font-size: 0.85rem; line-height: 1.4; }
-        .branch-list { list-style: none; padding: 0; margin: 0; }
-        .branch-item { border-bottom: 1px solid #fafafa; padding: 12px 0; }
-        .branch-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-        .branch-name { font-size: 0.95rem; color: #444; font-weight: 500; }
-        .btn-group { display: flex; gap: 8px; justify-content: flex-end; }
-        .btn { text-decoration: none; padding: 8px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; color: white; display: flex; align-items: center; gap: 4px; }
-        .map-btn { background: var(--map-color); box-shadow: 0 2px 4px rgba(66,133,244,0.3); }
-        .chirashi-btn { background: var(--chirashi-color); box-shadow: 0 2px 4px rgba(255,152,0,0.3); }
-        .footer { text-align: center; font-size: 0.75rem; color: #999; margin: 30px 0; padding-bottom: 20px; }
+        .shop-group { background: #fff; border-radius: 15px; padding: 15px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 6px solid var(--main-color); }
+        .brand-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+        .brand-name { font-weight: bold; font-size: 1.15rem; color: #1a1a1a; }
+        .feature-tag { background: #f1f3f5; color: #666; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; }
+        .sale-info { background: #fff5f5; border: 1px solid #ffe3e3; padding: 8px; border-radius: 8px; margin: 10px 0; font-size: 0.8rem; color: #c92a2a; }
+        .branch-item { padding: 10px 0; border-top: 1px solid #f0f0f0; }
+        .branch-name { font-size: 0.95rem; font-weight: bold; display: block; margin-bottom: 8px; }
+        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .btn { text-decoration: none; padding: 10px; border-radius: 8px; font-size: 0.8rem; font-weight: bold; color: white; text-align: center; display: flex; align-items: center; justify-content: center; gap: 4px; }
+        .map-btn { background: var(--map-color); }
+        .chirashi-btn { background: var(--chirashi-color); }
+        .footer { text-align: center; font-size: 0.75rem; color: #999; margin: 30px 0; line-height: 1.6; }
     </style>
 </head>
 <body>
 
-    <h1>🛒 平塚スーパー完全攻略</h1>
+    <h1>🛒 平塚スーパー特売ナビ</h1>
 
     <div class="shop-group">
         <div class="brand-header">
             <div class="brand-name">🔴 オーケー</div>
-            <span class="feature-tag">地域最安値挑戦</span>
+            <span class="feature-tag">激安の殿堂</span>
         </div>
-        <div class="sale-info">📢 <b>お得：</b>会員3%割引。ピザや高品質な肉が人気！</div>
         <div class="branch-item">
-            <div class="branch-info"><span class="branch-name">平塚店</span></div>
+            <span class="branch-name">平塚店</span>
             <div class="btn-group">
-                <a href="https://ok-corporation.jp/shop/hiratsuka.html" class="btn chirashi-btn">📄 公式チラシ</a>
+                <a href="https://tokubai.co.jp/shops/10574" class="btn chirashi-btn">📄 最新チラシ</a>
                 <a href="https://www.google.com/maps/search/?api=1&query=オーケー+平塚店" class="btn map-btn">📍 地図</a>
             </div>
         </div>
@@ -45,29 +42,13 @@
 
     <div class="shop-group">
         <div class="brand-header">
-            <div class="brand-name">🐖 ロピア</div>
-            <span class="feature-tag">肉の聖地・激安</span>
-        </div>
-        <div class="sale-info">📢 <b>お得：</b>29日は肉の日。チラシは「Shufoo!」等でも公開。</div>
-        <div class="branch-item">
-            <div class="branch-info"><span class="branch-name">ららぽーと湘南平塚店</span></div>
-            <div class="btn-group">
-                <a href="https://lopia.jp/shop/shonan_hiratsuka" class="btn chirashi-btn">📄 公式サイト</a>
-                <a href="https://www.google.com/maps/search/?api=1&query=ロピア+ららぽーと湘南平塚店" class="btn map-btn">📍 地図</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="shop-group">
-        <div class="brand-header">
             <div class="brand-name">🥬 エイビイ (ave)</div>
-            <span class="feature-tag">現金特価・地域最安級</span>
+            <span class="feature-tag">圧倒的安さ</span>
         </div>
-        <div class="sale-info">📢 <b>お得：</b>チラシを出さない分、毎日が激安。野菜・肉が強い！</div>
         <div class="branch-item">
-            <div class="branch-info"><span class="branch-name">平塚店 (OSC湘南)</span></div>
+            <span class="branch-name">平塚店 (OSC湘南)</span>
             <div class="btn-group">
-                <a href="https://www.ave.gr.jp/store/hiratsuka/" class="btn chirashi-btn">📄 公式サイト</a>
+                <a href="https://tokubai.co.jp/shops/10943" class="btn chirashi-btn">📄 最新チラシ</a>
                 <a href="https://www.google.com/maps/search/?api=1&query=エイビイ+平塚店" class="btn map-btn">📍 地図</a>
             </div>
         </div>
@@ -75,14 +56,27 @@
 
     <div class="shop-group">
         <div class="brand-header">
-            <div class="brand-name">🔵 西友 (SEIYU)</div>
-            <span class="feature-tag">24時間営業</span>
+            <div class="brand-name">🐖 ロピア</div>
+            <span class="feature-tag">肉が安い</span>
         </div>
-        <div class="sale-info">📢 <b>お得：</b>「みなさまのお墨付き」が安い。楽天ポイント活用可。</div>
         <div class="branch-item">
-            <div class="branch-info"><span class="branch-name">平塚店</span></div>
+            <span class="branch-name">ららぽーと湘南平塚店</span>
             <div class="btn-group">
-                <a href="https://www.seiyu.co.jp/shop/%E8%A5%BF%E5%8F%8B%E5%B9%B3%E5%A1%9A%E5%BA%97/" class="btn chirashi-btn">📄 Webチラシ</a>
+                <a href="https://tokubai.co.jp/shops/129759" class="btn chirashi-btn">📄 最新チラシ</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=ロピア+ららぽーと湘南平塚店" class="btn map-btn">📍 地図</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="shop-group">
+        <div class="brand-header">
+            <div class="brand-name">🔵 西友</div>
+            <span class="feature-tag">24H営業</span>
+        </div>
+        <div class="branch-item">
+            <span class="branch-name">平塚店</span>
+            <div class="btn-group">
+                <a href="https://tokubai.co.jp/shops/542" class="btn chirashi-btn">📄 最新チラシ</a>
                 <a href="https://www.google.com/maps/search/?api=1&query=西友+平塚店" class="btn map-btn">📍 地図</a>
             </div>
         </div>
@@ -90,37 +84,35 @@
 
     <div class="shop-group">
         <div class="brand-header">
-            <div class="brand-name">🟢 しまむらストアー</div>
-            <span class="feature-tag">地元密着</span>
+            <div class="brand-name">🟥 ヤオコー</div>
+            <span class="feature-tag">お惣菜が人気</span>
         </div>
-        <div class="sale-info">📢 <b>お得：</b>火曜・水曜の特売や、週末のポイント還元に注目。</div>
         <div class="branch-item">
-            <div class="branch-info"><span class="branch-name">店舗一覧（全11店舗）</span></div>
+            <span class="branch-name">平塚宮松町店</span>
             <div class="btn-group">
-                <a href="http://www.shimamura-store.co.jp/shop/" class="btn chirashi-btn">📄 店舗・チラシ</a>
-                <a href="https://www.google.com/maps/search/?api=1&query=しまむらストアー+平塚" class="btn map-btn">📍 全店表示</a>
+                <a href="https://tokubai.co.jp/shops/145892" class="btn chirashi-btn">📄 最新チラシ</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=ヤオコー+平塚宮松町店" class="btn map-btn">📍 地図</a>
             </div>
         </div>
     </div>
 
     <div class="shop-group">
         <div class="brand-header">
-            <div class="brand-name">🕊️ ヨークフーズ / ヨーカドー</div>
-            <span class="feature-tag">8のつく日 5%OFF</span>
+            <div class="brand-name">🟢 しまむらストアー</div>
+            <span class="feature-tag">地元平塚</span>
         </div>
-        <div class="sale-info">📢 <b>お得：</b>ハッピーデーはイトーヨーカドーアプリ提示でお得。</div>
         <div class="branch-item">
-            <div class="branch-info"><span class="branch-name">平塚店 他</span></div>
+            <span class="branch-name">全店チラシ一覧</span>
             <div class="btn-group">
-                <a href="https://www.york-inc.com/store/kanagawa.html" class="btn chirashi-btn">📄 店舗・チラシ</a>
-                <a href="https://www.google.com/maps/search/?api=1&query=ヨークフーズ+平塚" class="btn map-btn">📍 地図</a>
+                <a href="https://tokubai.co.jp/bargains/search?query=%E3%81%97%E3%81%BE%E3%82%80%E3%82%89%E3%82%B9%E3%83%88%E3%82%A2%E3%83%BC" class="btn chirashi-btn">📄 全店チラシ</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=しまむらストアー+平塚" class="btn map-btn">📍 地図</a>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        📅 チラシは公式サイトの最新情報をご確認ください。<br>
-        Happy Shopping! ✨
+        ※チラシは「トクバイ」等のサイトへ移動します。<br>
+        毎日のお買い物がもっと楽しくなりますように！🍱
     </div>
 
 </body>
