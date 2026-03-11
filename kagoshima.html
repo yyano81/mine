@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鹿児島・桜島 満喫ガイド</title>
+    <title>鹿児島・桜島 絶景温泉ガイド</title>
     <style>
         :root {
             --volcano-red: #c0392b;
             --ocean-blue: #2980b9;
-            --gold: #f1c40f;
+            --onsen-gold: #d4af37;
         }
         body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            font-family: "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #fcfcfc;
+            background-color: #f9f9f9;
             color: #333;
         }
         header {
-            background: linear-gradient(135deg, var(--volcano-red), #e67e22);
+            background: linear-gradient(135deg, var(--ocean-blue), #34495e);
             color: white;
             padding: 2rem 1rem;
             text-align: center;
@@ -37,148 +37,104 @@
             font-weight: bold;
         }
         h2 {
-            border-left: 6px solid var(--volcano-red);
+            border-left: 6px solid var(--onsen-gold);
             padding-left: 10px;
             margin-top: 40px;
-            color: var(--volcano-red);
+            color: #2c3e50;
         }
         
-        /* ホテルカード */
-        .hotel-card {
+        /* 温泉カード */
+        .spa-card {
             background: white;
-            border: 1px solid #eee;
             border-radius: 12px;
             padding: 20px;
             margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
         }
-        .hotel-header {
+        .spa-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            border-bottom: 1px solid #f0f0f0;
+            align-items: center;
+            border-bottom: 2px solid #f0f0f0;
             padding-bottom: 10px;
             margin-bottom: 15px;
         }
-        .hotel-name {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        .guarantee-badge {
-            background: #fff3f3;
-            color: var(--volcano-red);
-            padding: 4px 12px;
-            border-radius: 20px;
+        .hotel-name { font-size: 1.25rem; font-weight: bold; }
+        .spa-feature {
+            background: #fff9e6;
+            color: #996515;
+            padding: 4px 10px;
+            border-radius: 4px;
             font-size: 0.8rem;
             font-weight: bold;
-            border: 1px solid var(--volcano-red);
         }
-        .price-info {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            margin-bottom: 10px;
-        }
+        .description { font-size: 0.95rem; margin-bottom: 15px; }
         .map-btn {
             display: inline-block;
-            background: var(--ocean-blue);
+            background: #34495e;
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 6px;
+            padding: 8px 18px;
+            border-radius: 5px;
             font-size: 0.9rem;
-            transition: 0.3s;
         }
-        .map-btn:hover { background: #1a5276; }
+        .map-btn:hover { opacity: 0.8; }
 
-        /* 観光セクション */
-        .spot-item {
-            background: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            border-left: 4px solid var(--gold);
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: #999;
-            font-size: 0.8rem;
-        }
+        footer { text-align: center; padding: 40px; color: #999; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>🌋 鹿児島・桜島 満喫ガイド</h1>
-    <p>5月GW 絶景確約の旅プラン</p>
+    <h1>♨️ 桜島を望む絶景温泉・ホテル</h1>
+    <p>「お風呂から満喫」をテーマにした厳選ガイド</p>
 </header>
 
 <div class="container">
     <a href="index.html" class="back-link">← ホーム（平塚ガイド）へ戻る</a>
 
-    <h2>🏨 桜島ビュー確約ホテル</h2>
-    <p>※GW期間中のため、予約時に必ず「桜島側」のプランを選択してください。</p>
+    <h2>🚩 露天・展望風呂から桜島が見えるホテル</h2>
+    <p>お部屋が市街地側でも、これらのホテルなら大浴場で最高の景色に出会えます。</p>
 
-    <div class="hotel-card">
-        <div class="hotel-header">
+    <div class="spa-card">
+        <div class="spa-header">
             <div class="hotel-name">SHIROYAMA HOTEL kagoshima</div>
-            <span class="guarantee-badge">桜島ビュー客室あり</span>
+            <span class="spa-feature">展望露天温泉「さつま乃湯」</span>
         </div>
-        <div class="price-info">予算目安：高級 / 絶景露天風呂あり</div>
-        <p>標高108mの高台から、正面に桜島を望む鹿児島のシンボル的ホテル。露天風呂からの景色は圧巻です。</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=SHIROYAMA+HOTEL+kagoshima" target="_blank" class="map-btn">Googleマップで場所を確認</a>
+        <p class="description">標高108mからの眺望は鹿児島一。露天風呂に入ると、錦江湾に浮かぶ桜島と市街地が目の前に広がります。特に朝日が昇る時間は神々しい美しさです。</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=キャンドゥ+平塚市8" target="_blank" class="map-btn">Googleマップで見る</a>
     </div>
 
-    <div class="hotel-card">
-        <div class="hotel-header">
-            <div class="hotel-name">ソラリア西鉄ホテル鹿児島</div>
-            <span class="guarantee-badge">桜島側確約プランあり</span>
-        </div>
-        <div class="price-info">予算目安：中価格帯 / 鹿児島中央駅直結</div>
-        <p>「桜島側」指定プランを選べば、窓一面に広がるパノラマビューが確約。アクセス重視ならここが一番です。</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=ソラリア西鉄ホテル鹿児島" target="_blank" class="map-btn">Googleマップで場所を確認</a>
-    </div>
-
-    <div class="hotel-card">
-        <div class="hotel-header">
+    <div class="spa-card">
+        <div class="spa-header">
             <div class="hotel-name">鹿児島サンロイヤルホテル</div>
-            <span class="guarantee-badge">桜島側客室指定可</span>
+            <span class="spa-feature">最上階展望温泉</span>
         </div>
-        <div class="price-info">予算目安：中価格帯 / 海沿いの老舗</div>
-        <p>錦江湾のすぐそばに位置し、遮るものなく桜島が見えます。最上階の展望温泉からも桜島が拝めます。</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=鹿児島サンロイヤルホテル" target="_blank" class="map-btn">Googleマップで場所を確認</a>
+        <p class="description">最上階13階に温泉があります。海沿いに位置しているため、お湯に浸かりながら、まるで海の上に浮いているような感覚で桜島を真正面に眺められます。</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=キャンドゥ+平塚市9" target="_blank" class="map-btn">Googleマップで見る</a>
     </div>
 
-    <div class="hotel-card">
-        <div class="hotel-header">
+    <div class="spa-card">
+        <div class="spa-header">
             <div class="hotel-name">ホテルウェルビューかごしま</div>
-            <span class="guarantee-badge">桜島側シングル・ツインあり</span>
+            <span class="spa-feature">展望温泉浴場</span>
         </div>
-        <div class="price-info">予算目安：リーズナブル / 公営宿舎</div>
-        <p>コスパ重視で「桜島ビュー」を狙うならここ。海に突き出た立地で、どのホテルよりも桜島を近くに感じられます。</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=ホテルウェルビューかごしま" target="_blank" class="map-btn">Googleマップで場所を確認</a>
+        <p class="description">4階にある展望風呂の大きな窓から、大迫力の桜島を間近に楽しめます。リーズナブルな価格帯ながら、景色は一級品。サウナからも景色が楽しめます。</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=ワッツ+平塚市0" target="_blank" class="map-btn">Googleマップで見る</a>
     </div>
 
-    <h2>🚢 桜島をしっかり満喫するコツ</h2>
-    <div class="spot-item">
-        <strong>桜島フェリー「よりみちクルーズ」</strong><br>
-        1日1便（11:10発）の50分間クルーズ。通常の定期便では通らないルートを通り、海からの絶景を堪能できます。
-    </div>
-    <div class="spot-item">
-        <strong>サクラジマアイランドビュー</strong><br>
-        桜島内の主要スポットを回る周遊バス。湯之平展望所での停車時間もあり、車がなくても満喫可能です。
-    </div>
-    <div class="spot-item">
-        <strong>溶岩なぎさ公園（足湯）</strong><br>
-        100mの足湯。目の前の桜島を見ながら休憩。タオル持参がおすすめです！
-    </div>
+    <h2>💡 お風呂で桜島を120%楽しむコツ</h2>
+    <ul>
+        <li><strong>朝風呂を狙う：</strong> 桜島越しに朝日が昇る光景は、早起きする価値があります。</li>
+        <li><strong>夕暮れのシルエット：</strong> 太陽が沈み、桜島が黒いシルエットに変わっていくマジックアワーも格別です。</li>
+        <li><strong>噴煙を観察：</strong> 火山ならではの白い煙がたなびく様子は、温泉に浸かりながらいつまでも眺めていられます。</li>
+    </ul>
 
 </div>
 
 <footer>
-    © 2026 Kagoshima Travel Guide. リンクはすべてGoogleマップへ。
+    © 2026 Kagoshima Onsen Guide. リンクはGoogleマップへ。
 </footer>
 
 </body>
