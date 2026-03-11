@@ -3,89 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>平塚スーパー完全ガイド 🛒</title>
+    <title>平塚スーパー完全攻略マップ 🛒</title>
     <style>
-        body { font-family: "Helvetica Neue", Arial, sans-serif; background: #f0f2f5; padding: 15px; margin: 0; color: #333; }
-        h1 { font-size: 1.5rem; text-align: center; color: #28a745; margin-bottom: 20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
-        .category-tag { background: #28a745; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 10px; display: inline-block; }
-        .shop-group { background: #fff; border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #28a745; }
-        .brand-name { font-weight: bold; font-size: 1.2rem; color: #1a1a1a; display: flex; align-items: center; gap: 8px; }
-        .sale-info { background: #fff3cd; border: 1px dashed #ffc107; padding: 8px; border-radius: 6px; margin: 10px 0; font-size: 0.85rem; color: #856404; }
-        .branch-list { list-style: none; padding: 0; margin: 10px 0 0 0; }
-        .branch-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-top: 1px solid #eee; }
-        .branch-name { font-size: 0.9rem; color: #555; }
-        .map-btn { background: #4285F4; color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: bold; }
-        .footer { text-align: center; font-size: 0.7rem; color: #888; margin-top: 20px; }
+        :root { --main-color: #28a745; --accent-color: #ff6b6b; }
+        body { font-family: "Helvetica Neue", Arial, sans-serif; background: #f8f9fa; padding: 15px; margin: 0; color: #333; }
+        h1 { font-size: 1.4rem; text-align: center; color: white; background: var(--main-color); padding: 15px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .shop-group { background: #fff; border-radius: 15px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .brand-header { display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #f0f0f0; padding-bottom: 8px; margin-bottom: 10px; }
+        .brand-name { font-weight: bold; font-size: 1.15rem; color: #1a1a1a; display: flex; align-items: center; gap: 5px; }
+        .feature-tag { background: #e9ecef; color: #495057; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; }
+        .sale-info { background: #fff9db; border-left: 4px solid #fab005; padding: 10px; border-radius: 4px; margin: 10px 0; font-size: 0.85rem; line-height: 1.4; }
+        .branch-list { list-style: none; padding: 0; margin: 0; }
+        .branch-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #fafafa; }
+        .branch-name { font-size: 0.9rem; color: #444; }
+        .map-btn { background: #4285F4; color: white; text-decoration: none; padding: 6px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; box-shadow: 0 2px 4px rgba(66,133,244,0.3); }
+        .footer { text-align: center; font-size: 0.75rem; color: #999; margin: 30px 0; padding-bottom: 20px; }
     </style>
 </head>
 <body>
 
-    <h1>🛒 平塚スーパー完全ガイド</h1>
+    <h1>🛒 平塚スーパー完全攻略</h1>
 
     <div class="shop-group">
-        <div class="brand-name">🔴 オーケー</div>
-        <div class="sale-info">📢 <b>お得：</b>「オーケークラブ会員」入会で食料品がずっと3%相当割引！</div>
+        <div class="brand-header">
+            <div class="brand-name">🥬 エイビイ (ave)</div>
+            <span class="feature-tag">超激安・現金のみ</span>
+        </div>
+        <div class="sale-info">📢 <b>お得：</b>毎日が特売レベル。特に野菜と肉の箱買いが最強クラスに安い！</div>
         <ul class="branch-list">
-            <li class="branch-item"><span class="branch-name">平塚店</span><a href="https://maps.google.com/?q=オーケー平塚店" class="map-btn">📍地図</a></li>
+            <li class="branch-item"><span class="branch-name">平塚店 (OSC湘南)</span><a href="https://www.google.com/maps/search/?api=1&query=エイビイ+平塚店" class="map-btn">📍地図</a></li>
         </ul>
     </div>
 
     <div class="shop-group">
-        <div class="brand-name">🐖 ロピア</div>
-        <div class="sale-info">📢 <b>お得：</b>肉の安さは圧倒的。29日（肉の日）は特売に注目！</div>
+        <div class="brand-header">
+            <div class="brand-name">🔴 オーケー</div>
+            <span class="feature-tag">地域最安値挑戦</span>
+        </div>
+        <div class="sale-info">📢 <b>お得：</b>会員カード提示で3%割引。ピザも安くて絶品！</div>
         <ul class="branch-list">
-            <li class="branch-item"><span class="branch-name">ららぽーと湘南平塚店</span><a href="https://maps.google.com/?q=ロピアららぽーと湘南平塚店" class="map-btn">📍地図</a></li>
+            <li class="branch-item"><span class="branch-name">平塚店</span><a href="https://www.google.com/maps/search/?api=1&query=オーケー+平塚店" class="map-btn">📍地図</a></li>
         </ul>
     </div>
 
     <div class="shop-group">
-        <div class="brand-name">🟣 マックスバリュ</div>
-        <div class="sale-info">📢 <b>お得：</b>毎月20・30日はお客様感謝デー5%OFF！火水曜市も。</div>
+        <div class="brand-header">
+            <div class="brand-name">🐖 ロピア</div>
+            <span class="feature-tag">肉の聖地・デカ盛り</span>
+        </div>
+        <div class="sale-info">📢 <b>お得：</b>29日の肉の日。オリジナル惣菜やデザートもボリューム満点！</div>
         <ul class="branch-list">
-            <li class="branch-item"><span class="branch-name">平塚河内店</span><a href="https://maps.google.com/?q=マックスバリュ平塚河内店" class="map-btn">📍地図</a></li>
-            <li class="branch-item"><span class="branch-name">平塚四之宮店</span><a href="https://maps.google.com/?q=マックスバリュ平塚四之宮店" class="map-btn">📍地図</a></li>
+            <li class="branch-item"><span class="branch-name">ららぽーと湘南平塚店</span><a href="https://www.google.com/maps/search/?api=1&query=ロピア+ららぽーと湘南平塚店" class="map-btn">📍地図</a></li>
         </ul>
     </div>
 
     <div class="shop-group">
-        <div class="brand-name">🟥 ヤオコー</div>
-        <div class="sale-info">📢 <b>お得：</b>お惣菜のクオリティが高め。ポイント3倍デーを狙え！</div>
+        <div class="brand-header">
+            <div class="brand-name">🟢 しまむらストアー</div>
+            <span class="feature-tag">地元平塚の味</span>
+        </div>
+        <div class="sale-info">📢 <b>お得：</b>地元野菜が豊富。曜日ごとのポイント倍増デーがお得。</div>
         <ul class="branch-list">
-            <li class="branch-item"><span class="branch-name">ららぽーと湘南平塚店</span><a href="https://maps.google.com/?q=ヤオコーららぽーと湘南平塚店" class="map-btn">📍地図</a></li>
-            <li class="branch-item"><span class="branch-name">平塚宮松町店</span><a href="https://maps.google.com/?q=ヤオコー平塚宮松町店" class="map-btn">📍地図</a></li>
+            <li class="branch-item"><span class="branch-name">駅前店 / 旭店 / 中里店 / 徳延店 / 横内店 他</span><a href="https://www.google.com/maps/search/?api=1&query=しまむらストアー+平塚" class="map-btn">📍全店表示</a></li>
         </ul>
     </div>
 
     <div class="shop-group">
-        <div class="brand-name">🟢 しまむらストアー（地元密着！）</div>
-        <div class="sale-info">📢 <b>お得：</b>地域最安値を目指す特売日あり。</div>
+        <div class="brand-header">
+            <div class="brand-name">🐟 湘南タマヤ</div>
+            <span class="feature-tag">魚が自慢</span>
+        </div>
+        <div class="sale-info">📢 <b>お得：</b>鮮魚の質が高い。日曜朝市やゾロ目市を狙うのがコツ。</div>
         <ul class="branch-list">
-            <li class="branch-item"><span class="branch-name">旭店</span><a href="https://maps.google.com/?q=しまむらストアー旭店" class="map-btn">📍地図</a></li>
-            <li class="branch-item"><span class="branch-name">駅前店</span><a href="https://maps.google.com/?q=しまむらストアー駅前店" class="map-btn">📍地図</a></li>
-            <li class="branch-item"><span class="branch-name">中里店</span><a href="https://maps.google.com/?q=しまむらストアー中里店" class="map-btn">📍地図</a></li>
-            <li class="branch-item"><span class="branch-name">徳延店</span><a href="https://maps.google.com/?q=しまむらストアー徳延店" class="map-btn">📍地図</a></li>
-            <li class="branch-item"><span class="branch-name">横内店</span><a href="https://maps.google.com/?q=しまむらストアー横内店" class="map-btn">📍地図</a></li>
+            <li class="branch-item"><span class="branch-name">浜岳店</span><a href="https://www.google.com/maps/search/?api=1&query=たまや+浜岳店" class="map-btn">📍地図</a></li>
+            <li class="branch-item"><span class="branch-name">中原店</span><a href="https://www.google.com/maps/search/?api=1&query=たまや+中原店" class="map-btn">📍地図</a></li>
         </ul>
     </div>
 
     <div class="shop-group">
-        <div class="brand-name">🔵 西友（SEIYU）</div>
-        <div class="sale-info">📢 <b>お得：</b>「みなさまのお墨付き」ブランドが安い。24時間営業。</div>
+        <div class="brand-header">
+            <div class="brand-name">🔵 西友 (SEIYU)</div>
+            <span class="feature-tag">24時間営業</span>
+        </div>
+        <div class="sale-info">📢 <b>お得：</b>プライベートブランド「お墨付き」が優秀。楽天ポイントが貯まる。</div>
         <ul class="branch-list">
-            <li class="branch-item"><span class="branch-name">平塚店</span><a href="https://maps.google.com/?q=西友平塚店" class="map-btn">📍地図</a></li>
+            <li class="branch-item"><span class="branch-name">平塚店</span><a href="https://www.google.com/maps/search/?api=1&query=西友+平塚店" class="map-btn">📍地図</a></li>
         </ul>
     </div>
 
     <div class="shop-group">
-        <div class="brand-name">イトーヨーカドー/ヨークフーズ</div>
-        <div class="sale-info">📢 <b>お得：</b>8のつく日はハッピーデーで5%OFF！</div>
+        <div class="brand-header">
+            <div class="brand-name">🕊️ ヨーク/ヨーカドー</div>
+            <span class="feature-tag">安心の品質</span>
+        </div>
+        <div class="sale-info">📢 <b>お得：</b>8のつく日（8, 18, 28日）はハッピーデーで5%OFF！</div>
         <ul class="branch-list">
-            <li class="branch-item"><span class="branch-name">イトーヨーカドー平塚店</span><a href="https://maps.google.com/?q=イトーヨーカドー平塚店" class="map-btn">📍地図</a></li>
-            <li class="branch-item"><span class="branch-name">ヨークフーズ平塚店</span><a href="https://maps.google.com/?q=ヨークフーズ平塚店" class="map-btn">📍地図</a></li>
+            <li class="branch-item"><span class="branch-name">イトーヨーカドー平塚店</span><a href="https://www.google.com/maps/search/?api=1&query=イトーヨーカドー+平塚店" class="map-btn">📍地図</a></li>
+            <li class="branch-item"><span class="branch-name">ヨークフーズ平塚店</span><a href="https://www.google.com/maps/search/?api=1&query=ヨークフーズ+平塚店" class="map-btn">📍地図</a></li>
         </ul>
     </div>
 
-    <div class="footer">※お得な日は変更される場合があります。各店舗のチラシをご確認ください。</div>
+    <div class="shop-group">
+        <div class="brand-header">
+            <div class="brand-name">📦 業務スーパー</div>
+            <span class="feature-tag">冷凍食品・輸入菓子</span>
+        </div>
+        <div class="sale-info">📢 <b>お得：</b>大容量の冷凍食品や調味料が安い。SNSで話題の輸入菓子も。</div>
+        <ul class="branch-list">
+            <li class="branch-item"><span class="branch-name">平塚店 / 平塚豊田店 / 平塚寺田縄店</span><a href="https://www.google.com/maps/search/?api=1&query=業務スーパー+平塚" class="map-btn">📍全店表示</a></li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        📅 情報は随時更新してください！<br>
+        Happy Shopping in Hiratsuka! ✨
+    </div>
 
 </body>
 </html>
