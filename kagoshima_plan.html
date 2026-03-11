@@ -3,40 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鹿児島宿泊 10選・徹底比較シート</title>
+    <title>鹿児島旅行 検討シート | 1泊 vs 2泊</title>
     <style>
         :root {
             --primary: #2c3e50;
             --accent: #e67e22;
             --bg: #f4f7f6;
+            --view-blue: #3498db;
+            --free-green: #27ae60;
         }
         body { font-family: sans-serif; background: var(--bg); color: var(--primary); margin: 0; line-height: 1.5; }
         header { background: var(--primary); color: white; padding: 25px; text-align: center; }
         .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        .back-link { text-decoration: none; color: #3498db; font-weight: bold; margin-bottom: 20px; display: inline-block; }
+        .back-link { text-decoration: none; color: var(--view-blue); font-weight: bold; margin-bottom: 20px; display: inline-block; }
         
+        /* スケジュール比較 */
+        .comparison-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .plan-box { background: white; padding: 20px; border-radius: 12px; border-top: 6px solid #ccc; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .plan-a { border-top-color: var(--accent); }
+        .plan-b { border-top-color: var(--free-green); }
+        .day-label { font-weight: bold; color: #555; display: block; margin-top: 10px; border-bottom: 1px solid #eee; }
+        .plan-box ul { padding-left: 20px; font-size: 0.9rem; }
+
+        /* ホテルリスト */
         .hotel-list { display: grid; gap: 15px; margin-top: 10px; }
         .hotel-card { background: white; padding: 18px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 6px solid #ccc; }
-        
-        .c-view { border-left-color: #3498db; }
-        .c-service { border-left-color: #27ae60; }
+        .c-view { border-left-color: var(--view-blue); }
+        .c-service { border-left-color: var(--free-green); }
         .c-standard { border-left-color: #95a5a6; }
 
         .hotel-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
         .hotel-name { font-size: 1.15rem; font-weight: bold; }
         .price { color: #c0392b; font-weight: bold; font-size: 1rem; }
-        .tag-group { margin-bottom: 10px; }
         .tag { font-size: 0.75rem; background: #eee; padding: 3px 10px; border-radius: 4px; margin-right: 5px; font-weight: bold; }
         
         .map-btn { 
-            display: inline-block;
-            background: #34495e;
-            color: white;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            margin-top: 10px;
+            display: inline-block; background: #34495e; color: white; text-decoration: none;
+            padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; margin-top: 10px;
         }
         .footer-note { background: #fff; padding: 20px; border-radius: 10px; margin-top: 30px; border: 2px dashed #bdc3c7; }
     </style>
@@ -44,33 +47,72 @@
 <body>
 
 <header>
-    <h1>🌋 鹿児島 宿泊10選（5/3時点）</h1>
-    <p>予算・絶景・無料サービスで比較検討</p>
+    <h1>🌋 鹿児島旅行 どっちにする？</h1>
+    <p>13:55着 鹿児島空港発 〜 広島へ新幹線</p>
 </header>
 
 <div class="container">
     <a href="index.html" class="back-link">← ホームへ戻る</a>
 
+    <h2>📅 日程を比べる</h2>
+    <div class="comparison-grid">
+        <div class="plan-box plan-a">
+            <h3>【A】1泊2日・集中満喫</h3>
+            <p><small>忙しいけど主要スポットは制覇。費用も抑えられる。</small></p>
+            <span class="day-label">Day 1 (5/3)</span>
+            <ul>
+                <li>13:55 空港着 → バスで市内へ</li>
+                <li>夕方：シロヤマホテル（日帰り入浴）で絶景</li>
+                <li>夜：天文館で黒豚ディナー</li>
+            </ul>
+            <span class="day-label">Day 2 (5/4)</span>
+            <ul>
+                <li>午前：仙巌園（世界遺産）を散策</li>
+                <li>午後：桜島フェリーで上陸 → 足湯など</li>
+                <li>夕方：新幹線で広島へ</li>
+            </ul>
+        </div>
+
+        <div class="plan-box plan-b">
+            <h3>【B】2泊3日・ゆったり島旅</h3>
+            <p><small>2日目にレンタカーで自由に回れる。贅沢な旅。</small></p>
+            <span class="day-label">Day 1 (5/3)</span>
+            <ul>
+                <li>到着後、市内散策＆絶景温泉</li>
+            </ul>
+            <span class="day-label">Day 2 (5/4) ★レンタカー推奨</span>
+            <ul>
+                <li>午前：桜島へ上陸 → 島内を1周ドライブ</li>
+                <li>昼：桜島内でランチ＆家族風呂</li>
+                <li>午後：霧島方面や指宿方面へ足を伸ばすのも可</li>
+            </ul>
+            <span class="day-label">Day 3 (5/5)</span>
+            <ul>
+                <li>仙巌園でお土産購入 → 新幹線で広島へ</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>🏨 ホテルを選ぶ（5/3予想価格）</h2>
     <div class="hotel-list">
-        
         <div class="hotel-card c-view">
             <div class="hotel-header">
                 <span class="hotel-name">1. SHIROYAMA HOTEL kagoshima</span>
-                <span class="price">約¥25,000〜 (シングル)</span>
+                <span class="price">約¥25,000〜 (単)</span>
             </div>
-            <div class="tag-group"><span class="tag">絶景露天</span><span class="tag">最高峰朝食</span></div>
-            <p><small>シングルなら予算内！部屋が街側でも、宿泊者専用の絶景温泉を何度も利用できる価値は圧倒的。</small></p>
-            <a href="https://www.google.com/maps/search/?api=1&query=SHIROYAMA+HOTEL+kagoshima" target="_blank" class="map-btn">Googleマップで場所を確認</a>
+            <p><small>シングルなら予算内！宿泊者専用の絶景温泉を何度も利用できる価値は圧倒的。</small></p>
+            <a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=SHIROYAMA HOTEL kagoshima" target="_blank" class="map-btn">Googleマップで検索</a>
         </div>
 
         <div class="hotel-card c-service">
             <div class="hotel-header">
-                <span class="hotel-name">2. ドーミーイン鹿児島</span>
+                <span class="hotel-name">2. 天然温泉 霧桜の湯 ドーミーイン鹿児島</span>
                 <span class="price">約¥18,000〜</span>
             </div>
-            <div class="tag-group"><span class="tag">夜鳴きそば</span><span class="tag">焼酎試飲</span><span class="tag">アイス無料</span></div>
-            <p><small>景色より実利。無料サービスが多く、天文館での飲み歩きに最適な立地です。</small></p>
-            <a href="https://www.google.com/maps/search/?api=1&query=ドーミーイン鹿児島" target="_blank" class="map-btn">Googleマップで場所を確認</a>
+            <p><small>夜鳴きそば・アイス・焼酎試飲など無料サービス充実。満足度重視なら。</small></p>
+            <a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=天然温泉 霧桜の湯 ドーミーイン鹿児島" target="_blank" class="map-btn">Googleマップで検索</a>
         </div>
 
         <div class="hotel-card c-view">
@@ -78,9 +120,8 @@
                 <span class="hotel-name">3. ホテルウェルビューかごしま</span>
                 <span class="price">約¥14,000〜</span>
             </div>
-            <div class="tag-group"><span class="tag">展望風呂絶景</span><span class="tag">コスパ重視</span></div>
-            <p><small>現在「県庁側」のみ。部屋の景色は諦め、展望風呂とロビーからの大迫力桜島を楽しむプラン。</small></p>
-            <a href="https://www.google.com/maps/search/?api=1&query=ホテルウェルビューかごしま" target="_blank" class="map-btn">Googleマップで場所を確認</a>
+            <p><small>現在「県庁側」のみ。部屋の景色は諦め、展望風呂とロビーからの景色を楽しむ割り切り。</small></p>
+            <a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=ホテルウェルビューかごしま" target="_blank" class="map-btn">Googleマップで検索</a>
         </div>
 
         <div class="hotel-card c-view">
@@ -88,9 +129,8 @@
                 <span class="hotel-name">4. 鹿児島サンロイヤルホテル</span>
                 <span class="price">約¥20,000〜</span>
             </div>
-            <div class="tag-group"><span class="tag">展望温泉</span><span class="tag">老舗の安心感</span></div>
             <p><small>最上階の温泉から桜島を真正面に望めます。静かに過ごしたい派におすすめ。</small></p>
-            <a href="https://www.google.com/maps/search/?api=1&query=鹿児島サンロイヤルホテル" target="_blank" class="map-btn">Googleマップで場所を確認</a>
+            <a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=鹿児島サンロイヤルホテル" target="_blank" class="map-btn">Googleマップで検索</a>
         </div>
 
         <div class="hotel-card c-standard">
@@ -98,9 +138,8 @@
                 <span class="hotel-name">5. ダイワロイネットホテル鹿児島天文館</span>
                 <span class="price">約¥16,000〜</span>
             </div>
-            <div class="tag-group"><span class="tag">2022年開業</span><span class="tag">1Fスーパー</span></div>
-            <p><small>新しく清潔感抜群。1Fがスーパーなので買い出しも便利。利便性重視ならここ。</small></p>
-            <a href="https://www.google.com/maps/search/?api=1&query=ダイワロイネットホテル鹿児島天文館" target="_blank" class="map-btn">Googleマップで場所を確認</a>
+            <p><small>2022年開業。1Fがスーパーなので買い出し便利。とにかく新しくて綺麗。</small></p>
+            <a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=ダイワロイネットホテル鹿児島天文館" target="_blank" class="map-btn">Googleマップで検索</a>
         </div>
 
         <div class="hotel-card c-view">
@@ -108,9 +147,8 @@
                 <span class="hotel-name">6. ソラリア西鉄ホテル鹿児島</span>
                 <span class="price">約¥28,000〜</span>
             </div>
-            <div class="tag-group"><span class="tag">中央駅直結</span><span class="tag">パノラマビュー</span></div>
-            <p><small>立地最高。フロントロビーからの桜島は圧巻。高級感と利便性を求めるならここ。</small></p>
-            <a href="https://www.google.com/maps/search/?api=1&query=ソラリア西鉄ホテル鹿児島" target="_blank" class="map-btn">Googleマップで場所を確認</a>
+            <p><small>中央駅直結。フロントロビーからの桜島は圧巻。高級感と利便性ならここ。</small></p>
+            <a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=ソラリア西鉄ホテル鹿児島" target="_blank" class="map-btn">Googleマップで検索</a>
         </div>
 
         <div class="hotel-card c-view">
@@ -118,9 +156,8 @@
                 <span class="hotel-name">7. アートホテル鹿児島</span>
                 <span class="price">約¥15,000〜</span>
             </div>
-            <div class="tag-group"><span class="tag">海沿い</span><span class="tag">朝食定評</span></div>
             <p><small>桜島との距離が近く、海を感じられる立地。市街地から少し離れますがコスパ良し。</small></p>
-            <a href="https://www.google.com/maps/search/?api=1&query=アートホテル鹿児島" target="_blank" class="map-btn">Googleマップで場所を確認</a>
+            <a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=アートホテル鹿児島" target="_blank" class="map-btn">Googleマップで検索</a>
         </div>
 
         <div class="hotel-card c-standard">
@@ -128,9 +165,8 @@
                 <span class="hotel-name">8. リッチモンドホテル鹿児島天文館</span>
                 <span class="price">約¥13,000〜</span>
             </div>
-            <div class="tag-group"><span class="tag">接客定評</span><span class="tag">繁華街すぐ</span></div>
-            <p><small>景色の期待は薄いですが、接客の安定感が抜群。夜の食事に出かけるのに最適。</small></p>
-            <a href="https://www.google.com/maps/search/?api=1&query=リッチモンドホテル鹿児島天文館" target="_blank" class="map-btn">Googleマップで場所を確認</a>
+            <p><small>接客の安定感が抜群。夜に天文館へ飲みに出かけるのに最適な立地です。</small></p>
+            <a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=リッチモンドホテル鹿児島天文館" target="_blank" class="map-btn">Googleマップで検索</a>
         </div>
 
         <div class="hotel-card c-standard">
@@ -138,9 +174,8 @@
                 <span class="hotel-name">9. JR九州ホテル鹿児島</span>
                 <span class="price">約¥17,000〜</span>
             </div>
-            <div class="tag-group"><span class="tag">改札直結</span><span class="tag">移動楽</span></div>
-            <p><small>新幹線利用ならここが一番楽。移動時間を最小限にしたい人向け。</small></p>
-            <a href="https://www.google.com/maps/search/?api=1&query=JR九州ホテル鹿児島" target="_blank" class="map-btn">Googleマップで場所を確認</a>
+            <p><small>新幹線改札直結。移動時間を最小限にして、観光を最大化したい人向け。</small></p>
+            <a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=JR九州ホテル鹿児島" target="_blank" class="map-btn">Googleマップで検索</a>
         </div>
 
         <div class="hotel-card c-service">
@@ -148,18 +183,15 @@
                 <span class="hotel-name">10. センチュリオンホテル鹿児島天文館</span>
                 <span class="price">約¥12,000〜</span>
             </div>
-            <div class="tag-group"><span class="tag">サウナ充実</span><span class="tag">格安コスパ</span></div>
-            <p><small>とにかく安く抑えたい、かつ大浴場やサウナを楽しみたいならここ。</small></p>
-            <a href="https://www.google.com/maps/search/?api=1&query=センチュリオンホテル鹿児島天文館" target="_blank" class="map-btn">Googleマップで場所を確認</a>
+            <p><small>とにかく安く抑えたい派。大浴場やサウナも充実しています。</small></p>
+            <a href="http://googleusercontent.com/maps.google.com/search/?api=1&query=センチュリオンホテル鹿児島天文館" target="_blank" class="map-btn">Googleマップで検索</a>
         </div>
-
     </div>
 
     <div class="footer-note">
-        <strong>💡 夫へ：どこが気になる？</strong><br>
-        「日帰り温泉でシロヤマを楽しみつつ、泊まりはコスパ良く。浮いたお金で美味しいもの食べよう！」
+        <strong>💡 夫への提案</strong><br>
+        「GWでどこも高いけど、このリストから選べば間違いなし！宿泊費を工夫して浮かせて、その分鹿児島でお腹いっぱい美味しいものを食べない？」
     </div>
-
 </div>
 
 </body>
