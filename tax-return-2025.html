@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025年度 確定申告データ一覧</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f4f7f6; }
+        .container { max-width: 1000px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h1 { color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+        .summary { display: flex; gap: 20px; margin-bottom: 20px; }
+        .summary-card { flex: 1; padding: 15px; border-radius: 5px; color: white; }
+        .income { background: #28a745; }
+        .expense { background: #dc3545; }
+        .profit { background: #007bff; }
+        input[type="text"] { width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background: #f8f9fa; cursor: pointer; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        tr:hover { background: #f1f1f1; }
+        .map-link { font-size: 0.8em; color: #007bff; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>2025年度 収支報告（青色申告用）</h1>
+
+    <div class="summary">
+        <div class="summary-card income">売上計: ¥520,520</div>
+        <div class="summary-card expense">経費計: ¥106,297</div>
+        <div class="summary-card profit">所得: ¥414,223</div>
+    </div>
+
+    <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="キーワードで検索（例：航空券、売上高...）">
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">日付</th>
+                <th>区分</th>
+                <th>勘定科目</th>
+                <th>取引先</th>
+                <th>内容・摘要</th>
+                <th>金額</th>
+                <th>支払手段</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            </tbody>
+    </table>
+</div>
+
+<script>
+const data = [
+    {d: "2025/12/01", t: "売上", c: "売上高", v: "株式会社Rushout", m: "事務代行業務", a: 40040, p: "銀行"},
+    {d: "2025/11/01", t: "売上", c: "売上高", v: "株式会社Rushout", m: "事務代行業務", a: 36520, p: "銀行"},
+    {d: "2025/10/01", t: "売上", c: "売上高", v: "株式会社Rushout", m: "事務代行業務", a: 36080, p: "銀行"},
+    {d: "2025/09/01", t: "売上", c: "売上高", v: "株式会社Rushout", m: "事務代行業務", a: 43560, p: "銀行"},
+    {d: "2025/08/01", t: "売上", c: "売上高", v: "株式会社Rushout", m: "事務代行業務", a: 46640, p: "銀行"},
+    {d: "2025/07/01", t: "売上", c: "売上高", v: "株式会社Rushout", m: "事務代行業務", a: 44880, p: "銀行"},
+    {d: "2025/06/01", t: "売上", c: "売上高", v: "株式会社Rushout", m: "事務代行業務", a: 46640, p: "銀行"},
+    {d: "2025/05/01", t: "売上", c: "売上高", v: "株式会社Rushout", m: "事務代行業務", a: 62920, p: "銀行"},
+    {d: "2025/04/01", t: "売上", c: "売上高", v: "株式会社Rushout", m: "事務代行業務", a: 69080, p: "銀行"},
+    {d: "2025/03/01", t: "売上", c: "売上高", v: "株式会社Rushout", m: "事務代行業務", a: 22000, p: "銀行"},
+    {d: "2025/02/01", t: "売上", c: "売上高", v: "株式会社Rushout", m: "事務代行業務", a: 34320, p: "銀行"},
+    {d: "2025/01/01", t: "売上", c: "売上高", v: "株式会社Rushout", m: "事務代行業務", a: 37840, p: "銀行"},
+    {d: "2025/02/04", t: "経費", c: "交通費", v: "日本航空株式会社", m: "航空券代", a: 17920, p: "銀行"},
+    {d: "2025/03/04", t: "経費", c: "交通費", v: "日本航空株式会社", m: "航空券代", a: 7310, p: "銀行"},
+    {d: "2025/04/08", t: "経費", c: "交通費", v: "日本航空株式会社", m: "航空券代", a: 8490, p: "銀行"},
+    {d: "2025/05/24", t: "経費", c: "交通費", v: "日本航空株式会社", m: "航空券代", a: 27070, p: "銀行"},
+    {d: "2025/05/24", t: "経費", c: "交通費", v: "日本航空株式会社", m: "航空券代", a: 34460, p: "銀行"},
+    {d: "2025/01/03", t: "経費", c: "交通費", v: "東日本旅客鉄道株式会社", m: "電車代", a: 1000, p: "銀行"},
+    {d: "2025/01/14", t: "経費", c: "交通費", v: "東日本旅客鉄道株式会社", m: "電車代", a: 2000, p: "銀行"},
+    {d: "2025/02/07", t: "経費", c: "交通費", v: "東日本旅客鉄道株式会社", m: "電車代", a: 1000, p: "銀行"},
+    {d: "2025/05/10", t: "経費", c: "交通費", v: "東日本旅客鉄道株式会社", m: "電車代", a: 1000, p: "銀行"},
+    {d: "2025/05/10", t: "経費", c: "交通費", v: "東日本旅客鉄道株式会社", m: "電車代", a: 500, p: "銀行"},
+    {d: "2025/05/26", t: "経費", c: "交通費", v: "東日本旅客鉄道株式会社", m: "電車代", a: 500, p: "銀行"},
+    {d: "2025/07/11", t: "経費", c: "交通費", v: "東日本旅客鉄道株式会社", m: "電車代", a: 1000, p: "銀行"},
+    {d: "2025/07/11", t: "経費", c: "交通費", v: "東日本旅客鉄道株式会社", m: "電車代", a: 500, p: "銀行"},
+    {d: "2025/11/15", t: "経費", c: "交通費", v: "東日本旅客鉄道株式会社", m: "電車代", a: 500, p: "銀行"},
+    {d: "2025/12/13", t: "経費", c: "交通費", v: "東日本旅客鉄道株式会社", m: "電車代", a: 1000, p: "銀行"},
+    {d: "2025/12/13", t: "経費", c: "交通費", v: "東日本旅客鉄道株式会社", m: "電車代", a: 500, p: "銀行"},
+    {d: "2025/12/17", t: "経費", c: "消耗品費", v: "Amazon Services International, LLC.", m: "参考書代", a: 1547, p: "銀行"}
+];
+
+// 日付順にソート
+data.sort((a, b) => new Date(a.d) - new Date(b.d));
+
+const tableBody = document.getElementById('tableBody');
+data.forEach(item => {
+    const row = `<tr>
+        <td>${item.d}</td>
+        <td>${item.t}</td>
+        <td>${item.c}</td>
+        <td>${item.v}<br><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.v)}" target="_blank">📍Map</a></td>
+        <td>${item.m}</td>
+        <td>¥${item.a.toLocaleString()}</td>
+        <td>${item.p}</td>
+    </tr>`;
+    tableBody.innerHTML += row;
+});
+
+function filterTable() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const rows = tableBody.getElementsByTagName('tr');
+    for (let i = 0; i < rows.length; i++) {
+        rows[i].style.display = rows[i].innerText.toLowerCase().includes(filter) ? "" : "none";
+    }
+}
+</script>
+
+</body>
+</html>
