@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【ご提案】これからのカーライフを「楽」にする選択：eKクロス EV</title>
+    <style>
+        :root {
+            --primary-color: #e60012; /* 三菱カラー */
+            --secondary-color: #2c3e50;
+            --bg-color: #f8f9fa;
+            --accent-color: #007bff;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.6;
+            color: var(--secondary-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+        }
+        h1 { font-size: 1.8rem; color: var(--primary-color); }
+        h2 { font-size: 1.4rem; border-left: 5px solid var(--primary-color); padding-left: 15px; margin-top: 40px; }
+        .intro { background: #fff5f5; padding: 20px; border-radius: 8px; font-weight: bold; }
+        .feature-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .feature-card {
+            background: #f1f3f5;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 4px solid var(--accent-color);
+        }
+        .benefit-list { list-style: none; padding: 0; }
+        .benefit-list li { margin-bottom: 10px; padding-left: 25px; position: relative; }
+        .benefit-list li::before { content: '✔'; position: absolute; left: 0; color: var(--primary-color); font-weight: bold; }
+        .price-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .price-table th, .price-table td { border: 1px solid #dee2e6; padding: 12px; text-align: left; }
+        .price-table th { background-color: #e9ecef; }
+        .highlight { color: var(--primary-color); font-weight: bold; font-size: 1.2rem; }
+        .footer-nav { text-align: center; margin-top: 50px; }
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover { opacity: 0.8; transform: translateY(-2px); }
+        .map-link { color: var(--accent-color); text-decoration: none; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>これからの移動を「もっと楽」に。<br>eKクロス EV 提案書</h1>
+    </header>
+
+    <div class="intro">
+        「運転はあまり好きじゃない、でも移動の自由は欲しい」<br>
+        そんなお兄さんにこそ、最新の軽EVという選択肢を提案させてください。
+    </div>
+
+    <h2>1. 運転のストレスを「機械」が肩代わり</h2>
+    <p>eKクロス EVには、最新の運転支援機能「マイパイロット（MI-PILOT）」が搭載されています。</p>
+    <div class="feature-box">
+        <div class="feature-card">
+            <strong>🛣️ 高速道路も自動感覚で</strong>
+            <p>アクセル、ブレーキ、ステアリングをシステムがサポート。先行車との距離を保ち、車線中央を走るよう助けてくれるので、長距離でも疲れが劇的に減ります。</p>
+        </div>
+        <div class="feature-card">
+            <strong>🅿️ 駐車のストレスゼロ</strong>
+            <p>「マイパイロット パーキング」なら、スイッチ一つで駐車完了。足立区の狭い駐車場でも、ハンドル・アクセル・ブレーキ操作をすべて車にお任せできます。</p>
+        </div>
+    </div>
+
+    <h2>2. 足立区住まいなら「今」が最大の買い時</h2>
+    <p>現在、東京都と足立区の補助金が非常に手厚く、ガソリン車を買うより圧倒的にお得です。</p>
+    <table class="price-table">
+        <tr>
+            <th>補助金の種類</th>
+            <th>予想補助額</th>
+        </tr>
+        <tr>
+            <td>国の補助金（CEV補助金）</td>
+            <td>約550,000円</td>
+        </tr>
+        <tr>
+            <td>東京都の補助金（ZEV補助金）</td>
+            <td>約450,000円〜</td>
+        </tr>
+        <tr>
+            <td>足立区の補助金</td>
+            <td>100,000円</td>
+        </tr>
+        <tr class="highlight">
+            <td>合計 補助額</td>
+            <td>約 1,100,000円 以上</td>
+        </tr>
+    </table>
+    <p>※車両価格が約300万円でも、実質<span class="highlight">190万円以下</span>で購入可能です。</p>
+
+    <h2>3. 運転嫌いな人にこそEVを勧める理由</h2>
+    <ul class="benefit-list">
+        <li><strong>ガソリンスタンドへ行く手間なし:</strong> 自宅でスマホのように充電するだけ。</li>
+        <li><strong>静かだから疲れない:</strong> エンジン音や振動がないだけで、精神的な疲れが半分以下になります。</li>
+        <li><strong>スマホで事前準備:</strong> 出発前にスマホからエアコンをON。夏も冬も快適な車内に乗り込めます。</li>
+    </ul>
+
+    <h2>4. お近くのディーラーで試乗を</h2>
+    <p>足立区内には試乗できる店舗が複数あります。まずは「運転しない楽さ」を体験してみてください。</p>
+    <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=三菱自動車+足立区" class="map-link">足立区内の三菱自動車をマップで探す</a></p>
+
+    <div class="footer-nav">
+        <p>詳細は公式サイトでチェックしてみてください！</p>
+        <a href="https://www.mitsubishi-motors.co.jp/lineup/ek_x_ev/index.html" class="btn" target="_blank">eKクロス EV 公式サイトへ</a>
+    </div>
+</div>
+
+</body>
+</html>
