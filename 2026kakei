@@ -1,0 +1,151 @@
+import weasyprint
+from weasyprint import HTML
+
+# HTML content with CSS for a clean, GitHub-style aesthetic
+html_content = """
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+            background-color: #ffffff;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #24292e;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            border-bottom: 1px solid #e1e4e8;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 24pt;
+            margin: 0;
+            color: #0366d6;
+        }
+        h2 {
+            font-size: 18pt;
+            border-left: 5px solid #0366d6;
+            padding-left: 10px;
+            margin-top: 30px;
+            color: #24292e;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #dfe2e5;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f6f8fa;
+            font-weight: bold;
+        }
+        .highlight-row {
+            background-color: #f1f8ff;
+            font-weight: bold;
+        }
+        .summary-box {
+            background-color: #fffbdd;
+            border: 1px solid #d4a017;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 10pt;
+            color: #586069;
+            text-align: center;
+            border-top: 1px solid #e1e4e8;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>世帯家計状況レポート 2026.04</h1>
+    </div>
+
+    <p>現在の世帯収入、固定支出、および資産形成の状況を整理したレポートです。現状、非常に効率的で資産形成スピードの速い家計構造となっています。</p>
+
+    <h2>1. 収支の全体像（月額ベース）</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>項目</th>
+                <th>金額（目安）</th>
+                <th>備考</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>世帯手取り合計</strong></td>
+                <td><strong>約455,000円</strong></td>
+                <td>夫（年収750万）＋私（7万）</td>
+            </tr>
+            <tr>
+                <td>家賃</td>
+                <td>150,000円</td>
+                <td>世帯手取りの約33%</td>
+            </tr>
+            <tr>
+                <td>つみたてNISA</td>
+                <td>100,000円</td>
+                <td>新NISA枠をフル活用</td>
+            </tr>
+            <tr class="highlight-row">
+                <td><strong>残金（生活費枠）</strong></td>
+                <td><strong>205,000円</strong></td>
+                <td>以下の変動費・貯蓄の原資</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>2. 変動費の内訳（詳細）</h2>
+    <p>工夫により非常に低く抑えられている項目が目立ちます。</p>
+    <ul>
+        <li><strong>光熱費：</strong> 約15,000円</li>
+        <li><strong>通信費：</strong> 約15,000円（docomo光10G / 無制限 / ahamo）</li>
+        <li><strong>ガソリン代：</strong> 10,000円以内</li>
+        <li><strong>美容代：</strong> 約2,500円（夫は自宅カット / 妻は年間3万円）</li>
+        <li><strong>交際費：</strong> ほぼ0円</li>
+    </ul>
+
+    <div class="summary-box">
+        <strong>【分析結果】</strong><br>
+        上記支出を差し引いた残りは<strong>約16万円</strong>です。食費・日用品を7万円と仮定すると、<strong>毎月約9万円前後の「現金貯蓄」</strong>ができている計算になります。非常に理想的な「攻めの家計」です。
+    </div>
+
+    <h2>3. 今後のポイント</h2>
+    <ul>
+        <li>生活防衛費（現金）が十分か定期的に確認する。</li>
+        <li>将来のライフイベント（住宅・出産等）の際は、月25万円（家賃+投資）の固定支出が基準になることを意識する。</li>
+    </ul>
+
+    <div class="footer">
+        &copy; 2026 Household Financial Management Report
+    </div>
+</body>
+</html>
+"""
+
+# HTMLをファイルに保存
+with open("household_budget_report.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
