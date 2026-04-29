@@ -1,130 +1,44 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Life & Travel Portal</title>
-    <style>
-        :root {
-            --primary-bg: #f0f2f5;
-            --card-bg: #ffffff;
-            --text-main: #2c3e50;
-            --accent-blue: #3498db;
-            --accent-green: #27ae60;
-            --accent-orange: #e67e22;
-            --accent-red: #e74c3c;
-            --accent-purple: #9b59b6;
-        }
-        body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-main);
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: linear-gradient(135deg, #2c3e50, #4ca1af);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 0 15px;
-        }
-        .section-title {
-            font-size: 1.2rem;
-            margin: 30px 0 15px 5px;
-            border-left: 5px solid var(--accent-blue);
-            padding-left: 10px;
-        }
-        
-        /* タイル型レイアウト */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-        .tile {
-            background: var(--card-bg);
-            text-decoration: none;
-            color: inherit;
-            padding: 25px 15px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-bottom: 4px solid #ddd;
-        }
-        .tile:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-        }
-        .icon { font-size: 2.2rem; margin-bottom: 10px; }
-        .tile-title { font-weight: bold; font-size: 1.1rem; }
-
-        /* カテゴリー別の色 */
-        .c-life { border-bottom-color: var(--accent-green); }
-        .c-shop { border-bottom-color: var(--accent-orange); }
-        .c-travel { border-bottom-color: var(--accent-red); }
-        .c-plan { border-bottom-color: var(--accent-purple); }
-
-        footer {
-            text-align: center;
-            padding: 50px 20px;
-            color: #95a5a6;
-            font-size: 0.8rem;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>My Life & Travel Archive</h1>
-    <p>日々の暮らしと、旅の記録</p>
-</header>
-
-<div class="container">
-
-    <div class="section-title">平塚 暮らしの情報</div>
-    <div class="grid">
-        <a href="super.html" class="tile c-life">
-            <span class="icon">🛒</span>
-            <span class="tile-title">スーパー</span>
-        </a>
-        <a href="100kin.html" class="tile c-shop">
-            <span class="icon">✨</span>
-            <span class="tile-title">100円ショップ</span>
-        </a>
-        <a href="drugstore.html" class="tile c-shop">
-            <span class="icon">💊</span>
-            <span class="tile-title">ドラッグストア</span>
-        </a>
-    </div>
-
-    <div class="section-title">旅行・お出かけ</div>
-    <div class="grid">
-        <a href="kagoshima.html" class="tile c-travel">
-            <span class="icon">🌋</span>
-            <span class="tile-title">鹿児島・温泉</span>
-        </a>
-        <a href="kagoshima_plan.html" class="tile c-plan">
-            <span class="icon">📅</span>
-            <span class="tile-title">鹿児島プラン</span>
-        </a>
-        </div>
-
+<div id="file-list-container">
+    <p>ファイルを取得中...</p>
 </div>
 
-<footer>
-    © 2026 Powered by GitHub Pages. <br>
-    お気に入りの情報をどんどん書き溜めていきましょう！
-</footer>
+<script>
+    // 1. あなたの情報を設定してください
+    const username = 'あなたのユーザー名';
+    const repo = 'リポジトリ名';
+    const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/`;
 
-</body>
-</html>
+    async function fetchFiles() {
+        try {
+            const response = await fetch(apiUrl);
+            const files = await response.json();
+
+            const container = document.getElementById('file-list-container');
+            container.innerHTML = ''; // ローディング表示を消す
+
+            const ul = document.createElement('ul');
+
+            files.forEach(file => {
+                // HTMLファイルだけを抽出（index.htmlは除外する場合の条件付き）
+                if (file.name.endsWith('.html') && file.name !== 'index.html') {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    
+                    // ファイル名からリンクを作成
+                    a.href = file.name; 
+                    a.textContent = file.name; // ファイル名をそのまま表示名にする
+                    
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                }
+            });
+
+            container.appendChild(ul);
+        } catch (error) {
+            console.error('データの取得に失敗しました:', error);
+            document.getElementById('file-list-container').innerText = '読み込みに失敗しました。';
+        }
+    }
+
+    fetchFiles();
+</script>
