@@ -1,12 +1,77 @@
-<div id="file-list-container">
-    <p>ファイルを読み込んでいます...</p>
+<div id="file-list-container" class="file-grid-wrapper">
+    <div class="loading-msg">ファイルを読み込んでいます...</div>
 </div>
 
+<style>
+    /* 全体のスタイル調整 */
+    .file-grid-wrapper {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    /* 読み込み中・エラーメッセージ */
+    .loading-msg, .error-msg {
+        text-align: center;
+        padding: 40px;
+        color: #666;
+        background: #f8f9fa;
+        border-radius: 12px;
+    }
+
+    /* リストをグリッド形式（タイル状）にする */
+    #file-list-container ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 16px;
+        list-style: none;
+        padding: 0;
+    }
+
+    /* ボタン（カード）の見た目 */
+    #file-list-container li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background: #ffffff;
+        color: #1a73e8;
+        padding: 20px 15px;
+        border: 2px solid #e1e4e8;
+        border-radius: 12px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        height: 100%;
+        text-align: center;
+    }
+
+    /* アイコンを疑似要素で追加 */
+    #file-list-container li a::before {
+        content: "📄";
+        margin-right: 8px;
+        font-size: 1.2em;
+    }
+
+    /* マウスを置いた時の動き */
+    #file-list-container li a:hover {
+        background-color: #1a73e8;
+        color: white;
+        border-color: #1a73e8;
+        transform: translateY(-4px);
+        box-shadow: 0 6px 12px rgba(26, 115, 232, 0.2);
+    }
+
+    /* クリックした瞬間 */
+    #file-list-container li a:active {
+        transform: translateY(0);
+    }
+</style>
+
 <script>
-    // 設定を固定しました
     const username = 'yyano81';
     const repo = 'mine';
-    // APIのURL（?t=...を付けて最新情報を強制取得するようにしました）
     const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/?t=${new Date().getTime()}`;
 
     async function fetchFiles() {
@@ -21,17 +86,14 @@
             const ul = document.createElement('ul');
 
             files.forEach(file => {
-                // .html で終わるファイルのみ（index.html は除く）
                 if (file.name.endsWith('.html') && file.name !== 'index.html') {
                     const li = document.createElement('li');
                     const a = document.createElement('a');
                     
-                    // リンク先を現在のリポジトリのパスに合わせる
-                    // ./ファイル名 とすることで、mineリポジトリ内を正しく参照します
                     a.href = `./${file.name}`;
-                    
-                    // 表示名は .html を取って読みやすく
-                    a.textContent = file.name.replace('.html', ''); 
+                    // ファイル名からハイフンやアンダースコアをスペースに置換して読みやすく
+                    const displayName = file.name.replace('.html', '').replace(/[-_]/g, ' ');
+                    a.textContent = displayName; 
                     
                     li.appendChild(a);
                     ul.appendChild(li);
@@ -39,14 +101,14 @@
             });
 
             if (ul.childElementCount === 0) {
-                container.innerText = '表示できるHTMLファイルが見つかりませんでした。';
+                container.innerHTML = '<div class="loading-msg">表示できるツールが見つかりませんでした。</div>';
             } else {
                 container.appendChild(ul);
             }
 
         } catch (error) {
             console.error('エラー内容:', error);
-            document.getElementById('file-list-container').innerText = '読み込みに失敗しました。リポジトリがPublic（公開）になっているか確認してください。';
+            document.getElementById('file-list-container').innerHTML = '<div class="error-msg">データの取得に失敗しました。リポジトリの公開設定を確認してください。</div>';
         }
     }
 
