@@ -1,0 +1,109 @@
+<section id="career-finance-simulator" style="max-width: 800px; margin: 20px auto; padding: 30px; border: 1px solid #e1e4e8; border-radius: 12px; background: #ffffff; font-family: sans-serif; line-height: 1.6;">
+    <h2 style="text-align: center; color: #1a73e8; border-bottom: 2px solid #1a73e8; padding-bottom: 10px;">📊 働き方・収支シミュレーター</h2>
+    <p style="font-size: 0.9em; color: #5f6368; text-align: center;">現状のフリーランス収支と、正社員になった場合の「実質価値」を比較します。</p>
+
+    <div id="input-form" style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; font-weight: bold;">1. 現在の形態は？</label>
+            <select id="currentStatus" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+                <option value="freelance">フリーランス</option>
+                <option value="employee">正社員</option>
+            </select>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; font-weight: bold;">2. 想定年収（税込）は？</label>
+            <input type="number" id="annualIncome" placeholder="例: 8000000" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+            <small style="color: #666;">※フリーランスの場合は売上、社員の場合は額面給与</small>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; font-weight: bold;">3. 月の平均経費（フリーランスのみ）</label>
+            <input type="number" id="monthlyExpense" placeholder="例: 50000" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; font-weight: bold;">4. 重視するポイントは？</label>
+            <select id="priority" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+                <option value="money">とにかく手取り金額（額面）</option>
+                <option value="time">中抜け・有給などの「時間の自由」</option>
+                <option value="stable">社会保険・厚生年金などの「将来の安心」</option>
+            </select>
+        </div>
+
+        <button onclick="simulate()" style="width: 100%; padding: 15px; background: #1a73e8; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1.1em;">収支・適性診断を実行</button>
+    </div>
+
+    <div id="simulation-result" style="display: none; padding: 20px; border: 2px solid #1a73e8; border-radius: 8px;">
+        <h3 id="diag-title" style="text-align: center; margin-top: 0;"></h3>
+        
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 20px;">
+            <div style="flex: 1; min-width: 250px; margin: 10px; padding: 15px; background: #fff4e5; border-radius: 8px;">
+                <h4 style="margin-top: 0; color: #e67e22;">フリーランス想定</h4>
+                <p id="f-takehome" style="font-size: 1.2em; font-weight: bold;"></p>
+                <p style="font-size: 0.8em; color: #666;">※売上から経費・国保・国民年金・所得税・住民税（概算）を差し引いた額</p>
+            </div>
+            <div style="flex: 1; min-width: 250px; margin: 10px; padding: 15px; background: #e8f0fe; border-radius: 8px;">
+                <h4 style="margin-top: 0; color: #1967d2;">正社員想定（当社）</h4>
+                <p id="s-takehome" style="font-size: 1.2em; font-weight: bold;"></p>
+                <p style="font-size: 0.8em; color: #666;">※社会保険・厚生年金・所得税・住民税（概算）を差し引いた額</p>
+            </div>
+        </div>
+
+        <div id="value-added" style="margin-top: 20px; padding: 15px; background: #f1f8e9; border-radius: 8px; border-left: 5px solid #4caf50;">
+            <h4 style="margin-top: 0; color: #2e7d32;">✨ 正社員なら得られる「見えない価値」</h4>
+            <ul id="benefits-list" style="padding-left: 20px; font-size: 0.9em;">
+                </ul>
+        </div>
+    </div>
+</section>
+
+<script>
+function simulate() {
+    const income = Number(document.getElementById('annualIncome').value);
+    const expense = Number(document.getElementById('monthlyExpense').value) * 12;
+    const priority = document.getElementById('priority').value;
+
+    if (!income) { alert("年収を入力してください"); return; }
+
+    // --- 簡易計算ロジック (概算) ---
+    // 正社員：手取り率を約75-80%と仮定
+    const sTakeHome = Math.floor(income * 0.78);
+    
+    // フリーランス：売上 - 経費 - (税・保険 約25%)
+    const fTakeHome = Math.floor((income - expense) * 0.75);
+
+    document.getElementById('simulation-result').style.display = 'block';
+    document.getElementById('f-takehome').innerText = "年間手取り：約 " + (Math.floor(fTakeHome/10000)) + " 万円";
+    document.getElementById('s-takehome').innerText = "年間手取り：約 " + (Math.floor(sTakeHome/10000)) + " 万円";
+
+    const list = document.getElementById('benefits-list');
+    list.innerHTML = "";
+    
+    const benefits = [
+        "中抜け・早退の給与控除なし（年収700万〜 またはランク特典）",
+        "入社初日からの有給休暇付与（お守り有給制度）",
+        "厚生年金による将来の年金額アップ（会社が半分負担）",
+        "社会的信用の向上（住宅ローン審査や賃貸契約に有利）"
+    ];
+
+    if (income >= 7000000) {
+        benefits.push("<strong>【高年収特典】</strong> 税率アップを回避しつつ、自由時間を増やす『セルフ管理型』への移行権利");
+    }
+
+    benefits.forEach(text => {
+        const li = document.createElement('li');
+        li.innerHTML = text;
+        list.appendChild(li);
+    });
+
+    const title = document.getElementById('diag-title');
+    if (priority === 'money' && fTakeHome > sTakeHome) {
+        title.innerText = "💰 金額重視ならフリーランス継続もアリ";
+    } else if (priority === 'time' || priority === 'stable') {
+        title.innerText = "🤝 当社の「正社員」で人生の質を上げるのがおすすめ";
+    } else {
+        title.innerText = "⚖️ ライフステージに合わせて検討しましょう";
+    }
+}
+</script>
