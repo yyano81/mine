@@ -1,6 +1,6 @@
 <section id="career-finance-simulator" style="max-width: 800px; margin: 20px auto; padding: 25px; border: none; border-radius: 16px; background: #ffffff; font-family: 'Helvetica Neue', Arial, sans-serif; box-shadow: 0 10px 25px rgba(0,0,0,0.1); color: #333;">
-    <h2 style="text-align: center; color: #1a73e8; margin-bottom: 10px;">📊 働き方診断シミュレーター</h2>
-    <p style="text-align: center; font-size: 0.9em; color: #666; margin-bottom: 30px;">「手取り」と「経費」のリアルな関係を可視化</p>
+    <h2 style="text-align: center; color: #1a73e8; margin-bottom: 10px;">📊 働き方・実質価値シミュレーター</h2>
+    <p style="text-align: center; font-size: 0.9em; color: #666; margin-bottom: 30px;">「手元に残る現金」と「経費の価値」を正しく比較</p>
 
     <div style="background: #f1f3f4; padding: 20px; border-radius: 12px; margin-bottom: 25px;">
         <div style="margin-bottom: 20px;">
@@ -9,7 +9,7 @@
                 <label id="label-f" style="flex: 1; background: #1a73e8; color: white; padding: 12px; border-radius: 8px; text-align: center; cursor: pointer; transition: 0.3s;">
                     <input type="radio" name="currentStatus" value="freelance" checked onclick="toggleInput('f')" style="display:none;"> フリーランス
                 </label>
-                <label id="label-e" style="flex: 1; background: white; color: #333; padding: 12px; border-radius: 8px; border: 1px solid #ccc; text-align: center; cursor: pointer; transition: 0.3s;">
+                <label id="label-e" style="flex: 1; background: white; color: #333; padding: 12px; border: 1px solid #ccc; border-radius: 8px; text-align: center; cursor: pointer; transition: 0.3s;">
                     <input type="radio" name="currentStatus" value="employee" onclick="toggleInput('e')" style="display:none;"> 正社員
                 </label>
             </div>
@@ -24,12 +24,12 @@
         </div>
 
         <div id="freelance-only" style="margin-bottom: 20px;">
-            <label style="display: block; font-weight: bold; margin-bottom: 8px;">3. 毎月の平均経費は？</label>
+            <label style="display: block; font-weight: bold; margin-bottom: 8px;">3. 毎月の平均経費（自分で自由に使える枠）は？</label>
             <div style="display: flex; align-items: center; background: white; border: 1px solid #ccc; border-radius: 8px; padding: 0 10px;">
-                <input type="number" id="monthlyExpense" placeholder="例: 100000" value="0" style="width: 100%; border: none; padding: 12px; outline: none; font-size: 1.1em;">
+                <input type="number" id="monthlyExpense" placeholder="例: 150000" value="0" style="width: 100%; border: none; padding: 12px; outline: none; font-size: 1.1em;">
                 <span style="font-weight: bold; color: #666;">円</span>
             </div>
-            <small style="color: #666;">PC代、通信費、交通費、家賃按分など</small>
+            <small style="color: #666;">PC、ガジェット、勉強代、家賃按分、交際費など</small>
         </div>
 
         <div id="employee-only" style="margin-bottom: 20px; display: none;">
@@ -40,18 +40,20 @@
             </div>
         </div>
 
-        <button onclick="runSimulation()" style="width: 100%; padding: 15px; background: #1a73e8; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1.1em; transition: background 0.3s;">診断結果を表示する</button>
+        <button onclick="runSimulation()" style="width: 100%; padding: 15px; background: #1a73e8; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1.1em; transition: 0.3s;">実質価値を診断する</button>
     </div>
 
     <div id="result-area" style="display: none; animation: fadeIn 0.5s;">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
             <div style="background: #fff4e5; padding: 15px; border-radius: 12px; border-top: 4px solid #e67e22; text-align: center;">
-                <p style="margin: 0; font-size: 0.85em; color: #e67e22; font-weight: bold;">フリーランス手取り</p>
+                <p style="margin: 0; font-size: 0.85em; color: #e67e22; font-weight: bold;">フリーランス実質手元</p>
                 <p id="f-result" style="font-size: 1.4em; font-weight: bold; margin: 10px 0 0 0;">-- 円</p>
+                <p style="font-size: 0.7em; color: #888; margin-top: 5px;">（現金手取り ＋ 経費枠）</p>
             </div>
             <div style="background: #e8f0fe; padding: 15px; border-radius: 12px; border-top: 4px solid #1a73e8; text-align: center;">
-                <p style="margin: 0; font-size: 0.85em; color: #1a73e8; font-weight: bold;">正社員（自社）手取り</p>
+                <p style="margin: 0; font-size: 0.85em; color: #1a73e8; font-weight: bold;">正社員（自社）実質手取り</p>
                 <p id="s-result" style="font-size: 1.4em; font-weight: bold; margin: 10px 0 0 0;">-- 円</p>
+                <p style="font-size: 0.7em; color: #888; margin-top: 5px;">（社保・税引後キャッシュ）</p>
             </div>
         </div>
         <div id="message-box" style="padding: 15px; border-radius: 12px; background: #f8f9fa; border: 1px solid #e1e4e8; line-height: 1.6;"></div>
@@ -83,17 +85,17 @@ function runSimulation() {
 
     if (!income) { alert("収入を入力してください"); return; }
 
-    // 正社員ロジック：標準手取り率は0.78（社保・税引き）
+    // 正社員：キャッシュの手取り
     const sTakeHome = Math.floor(income * 0.78);
 
-    // フリーランスロジック：経費を引いた「利益」に税率がかかる
-    // 経費が売上の20%を超えてくると、正社員より「可処分所得」が増え始める設定
+    // フリーランス：(利益 × 税引後率) ＋ 経費
+    // 経費は非課税で使えるお金なので、そのまま足し戻す
     const profit = income - expense;
-    // 税・保険料（国保・年金含む）を利益の約25%と想定
-    const fTakeHome = (profit > 0) ? (profit * 0.75) : 0;
+    const cashHand = (profit > 0) ? (profit * 0.75) : 0; // 税・国保等を引いた後の現金
+    const fTotalValue = cashHand + expense; // 実質的な価値
 
     document.getElementById('result-area').style.display = 'block';
-    document.getElementById('f-result').innerText = Math.floor(fTakeHome).toLocaleString() + " 円";
+    document.getElementById('f-result').innerText = Math.floor(fTotalValue).toLocaleString() + " 円";
     document.getElementById('s-result').innerText = sTakeHome.toLocaleString() + " 円";
 
     const msgBox = document.getElementById('message-box');
@@ -101,16 +103,16 @@ function runSimulation() {
 
     let advice = "";
     if (status === 'freelance') {
-        if (expenseRatio < 0.15) {
-            advice = `<h4 style="color: #e67e22; margin: 0;">💡 正社員の方が効率的かもしれません</h4>
-                      <p style="font-size: 0.9em; margin-top: 10px;">経費計上が少ない場合、フリーランスは税金と社会保険（自己負担）が重くのしかかります。当社の正社員なら、手取りを維持しつつ、<b>厚生年金</b>や<b>有給休暇</b>という資産を積み上げられます。</p>`;
+        if (expenseRatio >= 0.2) {
+            advice = `<h4 style="color: #2e7d32; margin: 0;">✨ 節税メリットを最大限活かせています</h4>
+                      <p style="font-size: 0.9em; margin-top: 10px;">経費計上により、正社員よりも「自由に使えるお金」を多く確保できています。このスタイルを維持しつつ、さらに「時間の自由」も求めるなら、当社の<b>セルフ管理型正社員</b>へ転換し、経費＋自由時間を両立する道も検討の価値ありです。</p>`;
         } else {
-            advice = `<h4 style="color: #2e7d32; margin: 0;">✨ 経費を有効活用できていますね</h4>
-                      <p style="font-size: 0.9em; margin-top: 10px;">経費計上による節税効果を最大化できています。今の収入帯なら、正社員に転換して<b>「セルフ管理型」</b>を選ぶことで、今の経済メリットと「中抜け自由」という時間を両立できる可能性があります。</p>`;
+            advice = `<h4 style="color: #e67e22; margin: 0;">💡 正社員への転換で実質価値が上がる可能性があります</h4>
+                      <p style="font-size: 0.9em; margin-top: 10px;">現在の経費率だと、自分で払う社会保険料や税金の負担が大きく、正社員の「会社負担社保」や「有給」の方がトータルメリットが大きそうです。まずは一度、将来設計を含めてお話ししませんか？</p>`;
         }
     } else {
-        advice = `<h4 style="color: #1a73e8; margin: 0;">💪 あなたのキャリアを最大化するために</h4>
-                  <p style="font-size: 0.9em; margin-top: 10px;">正社員として働きながら、自由度を高めるための「セルフ管理型」や「ランクアップ特典」をご用意しています。あなたの月収帯なら、自由と安定を最高水準で両立できます。</p>`;
+        advice = `<h4 style="color: #1a73e8; margin: 0;">🚀 安定を土台に自由を勝ち取る</h4>
+                  <p style="font-size: 0.9em; margin-top: 10px;">当社の正社員は、ただの「給与所得者」ではありません。ランクアップにより中抜け自由な<b>自律管理</b>を手に入れることで、フリーランス以上の『人生の自由度』を実現できます。</p>`;
     }
     msgBox.innerHTML = advice;
 }
