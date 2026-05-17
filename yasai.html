@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>野菜の正しい保管方法一覧</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #2c5e3b;
+            border-bottom: 3px solid #2c5e3b;
+            padding-bottom: 10px;
+        }
+        .intro {
+            background-color: #eef5f0;
+            border-left: 5px solid #2c5e3b;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c5e3b;
+            color: white;
+            white-space: nowrap;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f7f4;
+        }
+        .category {
+            font-weight: bold;
+            color: #2c5e3b;
+            width: 15%;
+        }
+        .vegetables {
+            font-weight: bold;
+            width: 20%;
+        }
+        .method {
+            width: 50%;
+        }
+        .days {
+            text-align: center;
+            width: 15%;
+            font-weight: bold;
+        }
+        @media screen and (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr {
+                border: 1px solid #ccc;
+                margin-bottom: 15px;
+                border-radius: 4px;
+                padding: 5px;
+                background-color: #fff !important;
+            }
+            td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 35%;
+                width: auto !important;
+                text-align: left !important;
+            }
+            td:before {
+                position: absolute;
+                top: 12px;
+                left: 15px;
+                width: 30%;
+                padding-right: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+                color: #2c5e3b;
+            }
+            td:nth-of-type(1):before { content: "保存区分"; }
+            td:nth-of-type(2):before { content: "対象野菜"; }
+            td:nth-of-type(3):before { content: "具体的な保管方法"; }
+            td:nth-of-type(4):before { content: "目安期間"; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>野菜の正しい保管方法まとめ</h1>
+    
+    <div class="intro">
+        <p>野菜はそれぞれ育った環境や性質に合わせた温度・湿度で保管することで、鮮度と栄養を長くキープできます。「常温」「冷蔵（立てる）」「冷蔵（包む）」「冷凍」の4つのコツを押さえましょう。</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>保存区分</th>
+                <th>対象野菜</th>
+                <th>具体的な保管方法</th>
+                <th>目安期間</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 常温保存 -->
+            <tr>
+                <td class="category" rowspan="3">常温保存<br><small>※夏場は冷暗所または野菜室</small></td>
+                <td class="vegetables">タマネギ・ジャガイモ</td>
+                <td class="method">ネットに入れるか、新聞紙に包んで風通しの良い日陰に吊るす。ジャガイモは光に当たると毒素（ソラニン）が増えるため必ず遮光する。リンゴと一緒に置くと芽が出にくくなります。</td>
+                <td class="days">約1〜2ヶ月</td>
+            </tr>
+            <tr>
+                <td class="vegetables">サツマイモ・サトイモ</td>
+                <td class="method">寒さに非常に弱いため、冷蔵庫に入れると低温障害を起こして傷みやすくなります。1つずつ新聞紙に包んでダンボールなどに入れ、15℃前後の冷暗所で保管します。</td>
+                <td class="days">約1ヶ月</td>
+            </tr>
+            <tr>
+                <td class="vegetables">カボチャ（丸ごと）</td>
+                <td class="method">丸ごとの場合は風通しの良い涼しい場所で常温保存がベスト。※カットしたものは傷みやすいため、種とワタをスプーンできれいにくり抜き、ラップを密着させて冷蔵庫へ。</td>
+                <td class="days">丸ごと：約1〜2ヶ月<br>カット：約4〜5日</td>
+            </tr>
+
+            <!-- 冷蔵：立てて保存 -->
+            <tr>
+                <td class="category" rowspan="2">冷蔵保存<br>（立てて保存）</td>
+                <td class="vegetables">アスパラガス・長ネギ<br>セロリ</td>
+                <td class="method">乾燥に弱く、収穫後も上に伸びようとする性質があります。根元を少し切り落とし、濡らしたキッチンペーパーを敷いた容器に立て、上からポリ袋をふんわりかぶせて野菜室へ。</td>
+                <td class="days">約4〜5日</td>
+            </tr>
+            <tr>
+                <td class="vegetables">ホウレン草・小松菜<br>チンゲン菜（葉物類）</td>
+                <td class="method">根元を軽く水で湿らせたキッチンペーパーで包み、ポリ袋に入れてから、牛乳パックやスタンド等を使って冷蔵庫の中に「立てて」保管します。葉の乾燥を防ぐのがコツ。</td>
+                <td class="days">約3〜5日</td>
+            </tr>
+
+            <!-- 冷蔵：包んで保存 -->
+            <tr>
+                <td class="category" rowspan="4">冷蔵保存<br>（包んで保存）</td>
+                <td class="vegetables">キャベツ・レタス</td>
+                <td class="method">芯をくり抜き、そこに濡らしたキッチンペーパーを詰めます。全体を新聞紙かポリ袋で包んで、芯があった方を下にして冷蔵庫（野菜室）で保管します。</td>
+                <td class="days">約2週間</td>
+            </tr>
+            <tr>
+                <td class="vegetables">大根・人参（根菜類）</td>
+                <td class="method">葉付きの場合は、葉に水分を吸い取られないようすぐに切り離します。それぞれ新聞紙に包み、ポリ袋に入れて野菜室へ。人参もできれば立てて置くと長持ちします。</td>
+                <td class="days">約2〜3週間</td>
+            </tr>
+            <tr>
+                <td class="vegetables">白菜</td>
+                <td class="method">丸ごとの場合は、新聞紙に包んで涼しい冷暗所に立てておけば冬場は常温でも持ちます。カットされたものは、芯に縦に切れ目を入れ、全体をラップでピッチリ包んで野菜室へ。</td>
+                <td class="days">丸ごと：約3〜4週間<br>カット：約1週間</td>
+            </tr>
+            <tr>
+                <td class="vegetables">ナス・ピーマン・トマト</td>
+                <td class="method">これらは夏野菜のため寒さに少し弱いです。1つずつ新聞紙やキッチンペーパーで包んで冷気が直接当たるのを防ぎ、ポリ袋に入れて野菜室（少し温度が高い場所）で保管します。</td>
+                <td class="days">約1週間</td>
+            </tr>
+
+            <!-- 冷凍保存 -->
+            <tr>
+                <td class="category">冷凍保存<br><small>※長期保存用</small></td>
+                <td class="vegetables">キノコ類（しめじ・えのき・エリンギ等）</td>
+                <td class="method">水洗いせず（水気は傷みの原因）、石づきを落として使いやすい大きさにほぐします。ジッパー付き保存袋に平らにして入れ、空気を抜いて冷凍。冷凍することで旨味がアップします。</td>
+                <td class="days">約1ヶ月</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
