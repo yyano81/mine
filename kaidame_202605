@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ナフサショック対策：夏本番前に買い溜めておくべき日用品リスト</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+        }
+        
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .update-time {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .intro {
+            background-color: #edf2f7;
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.15rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .important-text {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .notice-box {
+            background-color: #fff5f5;
+            border: 1px solid #feb2b2;
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .notice-box h3 {
+            color: #c53030;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>ナフサショック対策<br>夏本番前に備えるべき「買い溜め・ストック」日用品リスト</h1>
+        <div class="update-time">作成日: 2026年5月</div>
+    </header>
+
+    <div class="intro">
+        <p>ホルムズ海峡の緊迫化に伴う国産ナフサ価格の高騰（ナフサショック）により、プラスチック製品や包装資材の価格への影響が本格化しています。特に需要が急増する夏本番を前に、今のうちに少し多めに備蓄（ローリングストック）しておくと安心な日用品をまとめました。</p>
+    </div>
+
+    <h2>1. 夏の水分補給・お出かけ関連（最優先）</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>ペットボトル飲料</h3>
+            <p>水、お茶、スポーツドリンクなど。容器である<span class="important-text">PET樹脂</span>はナフサを原料とする代表格です。夏場の需要期と重なると、価格高騰や購入制限のリスクがあります。</p>
+        </div>
+        <div class="card">
+            <h3>食品保存ラップ・ジッパー袋</h3>
+            <p>ポリエチレンやポリ塩化ビニリデンなど、100%ナフサ由来の製品です。夏場の食材保存や冷凍に多用するため、数本多めにストックを推奨します。</p>
+        </div>
+        <div class="card">
+            <h3>使い捨てプラ製品・保冷剤</h3>
+            <p>アウトドアやお祭り、お弁当で使うプラスチックコップ、ストロー、そして夏に欠かせない保冷剤のパックも原材料高騰の影響を受けやすいアイテムです。</p>
+        </div>
+    </div>
+
+    <h2>2. 日常の消耗品・ゴミ袋</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>自治体指定ゴミ袋・ポリ袋</h3>
+            <p>完全にプラスチック樹脂（ポリエチレン等）で作られているため、ダイレクトに価格へ直撃します。すでに一部で数量制限の動きもあるため、1〜2パック多めの確保が安心です。</p>
+        </div>
+        <div class="card">
+            <h3>洗剤・シャンプーの「詰め替えパック」</h3>
+            <p>中身だけでなく、それを覆う<span class="important-text">ラミネートフィルム（パッケージ容器）</span>の製造コストが激増しています。本体ボトルより、詰め替え用のストックが賢明です。</p>
+        </div>
+        <div class="card">
+            <h3>プラスチック製保存容器（タッパー）</h3>
+            <p>夏場の作り置きや残り物の保存に活躍するポリプロピレン製の容器。もし買い替えを検討しているなら値上げ前の今がチャンスです。</p>
+        </div>
+    </div>
+
+    <h2>3. 防虫グッズ・夏物プラスチック用品</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>防虫剤・殺虫剤（容器・キャップ）</h3>
+            <p>蚊取り線香のケース、液体蚊取りのボトル、殺虫スプレーのプラスチックキャップなど、夏に必須のアイテムも容器コストの上昇が懸念されます。</p>
+        </div>
+        <div class="card">
+            <h3>ハンディファン・夏物収納家具</h3>
+            <p>携帯扇風機（ハンディファン）のプラスチックボディや、衣替えに使う衣装ケースなど、樹脂を多く使う季節家電・家具は早めの購入が推奨されます。</p>
+        </div>
+    </div>
+
+    <div class="notice-box">
+        <h3>💡 備蓄（買い溜め）のポイント</h3>
+        <p>焦って数年分を過剰に買い占める必要はありません。目安は<strong>「今年の夏から秋口までに確実に消費する量」</strong>です。普段使っているローリングストックの基準を、1〜2ヶ月分いつもより少し多めにキープするイメージで備えましょう。</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 ナフサショック生活防衛まとめ. All Rights Reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>
