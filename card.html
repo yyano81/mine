@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7%還元対象店舗チェッカー</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .search-box {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        .table-responsive {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+        th, td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #eee;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+        .category {
+            font-size: 0.85rem;
+            color: #666;
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .card-name {
+            font-weight: bold;
+            color: #0066cc;
+        }
+        .no-result {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>7%還元対象店舗チェッカー</h1>
+    <input type="text" id="searchInput" class="search-box" placeholder="店舗名やカード名、ジャンルで検索（例：セブン、マクドナルド、スーパー）...">
+    
+    <div class="table-responsive">
+        <table id="storeTable">
+            <thead>
+                <tr>
+                    <th>カテゴリ</th>
+                    <th>店舗名</th>
+                    <th>対象カード</th>
+                    <th>推奨支払い方法・条件</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- コンビニ -->
+                <tr>
+                    <td><span class="category">コンビニ</span></td>
+                    <td>セブン-イレブン</td>
+                    <td><span class="card-name">三井住友 / UFJ</span></td>
+                    <td>三井住友カード（スマホタッチ決済）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">コンビニ</span></td>
+                    <td>ローソン（ナチュラル/100含む）</td>
+                    <td><span class="card-name">三井住友 / UFJ</span></td>
+                    <td>三井住友またはUFJのスマホタッチ決済</td>
+                </tr>
+                <tr>
+                    <td><span class="category">コンビニ</span></td>
+                    <td>ミニストップ</td>
+                    <td><span class="card-name">三井住友</span></td>
+                    <td>三井住友カード（スマホタッチ決済）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">コンビニ</span></td>
+                    <td>セイコーマート（タイエー等）</td>
+                    <td><span class="card-name">三井住友</span></td>
+                    <td>三井住友カード（スマホタッチ決済）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">コンビニ</span></td>
+                    <td>ポプラ（生活彩家等）</td>
+                    <td><span class="card-name">三井住友</span></td>
+                    <td>三井住友カード（スマホタッチ決済）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">自販機</span></td>
+                    <td>コカ・コーラ自販機</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>自販機上のタッチ決済 または Coke ONアプリ</td>
+                </tr>
+
+                <!-- カフェ・飲食店 -->
+                <tr>
+                    <td><span class="category">飲食店</span></td>
+                    <td>マクドナルド</td>
+                    <td><span class="card-name">三井住友</span></td>
+                    <td>三井住友カード（スマホタッチ決済）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">飲食店</span></td>
+                    <td>モスバーガー（&カフェ含む）</td>
+                    <td><span class="card-name">三井住友</span></td>
+                    <td>三井住友カード（スマホタッチ決済）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">飲食店</span></td>
+                    <td>ケンタッキーフライドチキン</td>
+                    <td><span class="card-name">三井住友</span></td>
+                    <td>三井住友カード（スマホタッチ決済）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">飲食店</span></td>
+                    <td>吉野家 / すき家</td>
+                    <td><span class="card-name">三井住友</span></td>
+                    <td>三井住友カード（スマホタッチ決済）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">飲食店</span></td>
+                    <td>松屋・松のや・マイカリー食堂等</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>券売機・セルフレジ・アプリ注文（UFJ）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">飲食店</span></td>
+                    <td>スターバックス</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>スタバカードへの**オンライン入金**のみ</td>
+                </tr>
+                <tr>
+                    <td><span class="category">カフェ</span></td>
+                    <td>上島珈琲店 / UCC Cafe Plaza</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>店頭決済（UFJ）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">カフェ</span></td>
+                    <td>カフェ・ド・クリエ</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>店頭決済（UFJ ※モバイルオーダー不可）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">飲食店</span></td>
+                    <td>ゼッテリア</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>店頭決済・公式アプリモバイルオーダー（UFJ）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">飲食店</span></td>
+                    <td>サイゼリヤ / ドトール / ココス等</td>
+                    <td><span class="card-name">三井住友</span></td>
+                    <td>三井住友カード（スマホタッチ決済）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">飲食店</span></td>
+                    <td>すかいらーくグループ（ガスト等）</td>
+                    <td><span class="card-name">三井住友</span></td>
+                    <td>三井住友カード（スマホタッチ決済）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">回転寿司</span></td>
+                    <td>くら寿司 / スシロー</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>店頭決済のみ対象（事前ネット予約不可）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">寿司・飲食</span></td>
+                    <td>はま寿司 / かっぱ寿司</td>
+                    <td><span class="card-name">三井住友</span></td>
+                    <td>三井住友カード（スマホタッチ決済）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">デリバリー</span></td>
+                    <td>ピザハット</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>公式サイト・公式アプリでのオンライン注文</td>
+                </tr>
+
+                <!-- スーパー -->
+                <tr>
+                    <td><span class="category">スーパー</span></td>
+                    <td>オーケー</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>三菱UFJカード（※現金ならオーケークラブ約3%OFF）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">スーパー</span></td>
+                    <td>アオキスーパー</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>食品フロアでの利用（ネットスーパー不可）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">スーパー</span></td>
+                    <td>フードストアあおき</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>食品フロアでの利用（ネットスーパー不可）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">スーパー</span></td>
+                    <td>オオゼキ</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>店頭での利用（オンラインストア不可）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">スーパー</span></td>
+                    <td>サンリブ（マルショク等）</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>食品フロアでの利用（テナント不可）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">スーパー</span></td>
+                    <td>三和 / フードワン</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>食品フロアでの利用</td>
+                </tr>
+                <tr>
+                    <td><span class="category">スーパー</span></td>
+                    <td>スーパー魚長（生鮮乃木市場等）</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>食品フロアでの利用</td>
+                </tr>
+                <tr>
+                    <td><span class="category">スーパー</span></td>
+                    <td>近商ストア（ハーベス等）</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>食品フロアでの利用（ネットスーパー不可）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">スーパー</span></td>
+                    <td>東急ストア（プレッセ等）</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>食品フロアでの利用（テナント不可）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">スーパー</span></td>
+                    <td>東武ストア</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>食品フロアでの利用（ネットショップ等不可）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">スーパー</span></td>
+                    <td>ドミー</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>食品フロアでの利用</td>
+                </tr>
+                <tr>
+                    <td><span class="category">スーパー</span></td>
+                    <td>肉のハナマサ</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>店頭での利用（フランチャイズ店除く）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">スーパー</span></td>
+                    <td>ジャパンミート（MEATMeet等）</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>食品フロアでの利用</td>
+                </tr>
+                <tr>
+                    <td><span class="category">スーパー</span></td>
+                    <td>フィール</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>食品フロアでの利用（テナント不可）</td>
+                </tr>
+                <tr>
+                    <td><span class="category">スーパー</span></td>
+                    <td>ヤマナカ（フランテ等）</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>食品フロアでの利用（ネットスーパー不可）</td>
+                </tr>
+
+                <!-- その他ライフスタイル -->
+                <tr>
+                    <td><span class="category">ライフスタイル</span></td>
+                    <td>アカチャンホンポ</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>店頭（Mastercard/JCB/Visa）またはOnline Shop</td>
+                </tr>
+                <tr>
+                    <td><span class="category">ライフスタイル</span></td>
+                    <td>カーブス</td>
+                    <td><span class="card-name">UFJ</span></td>
+                    <td>入会金・月会費のご利用</td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="noResult" class="no-result">一致する店舗が見つかりませんでした。</div>
+    </div>
+</div>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const table = document.getElementById('storeTable');
+    const trs = table.getElementsByTagName('tr');
+    const noResult = document.getElementById('noResult');
+
+    searchInput.addEventListener('keyup', function() {
+        const filter = searchInput.value.toLowerCase();
+        let matchCount = 0;
+
+        for (let i = 1; i < trs.length; i++) {
+            const tr = trs[i];
+            const text = tr.textContent.toLowerCase();
+            if (text.indexOf(filter) > -1) {
+                tr.style.display = "";
+                matchCount++;
+            } else {
+                tr.style.display = "none";
+            }
+        }
+
+        if (matchCount === 0) {
+            noResult.style.display = "block";
+        } else {
+            noResult.style.display = "none";
+        }
+    });
+</script>
+
+</body>
+</html>
