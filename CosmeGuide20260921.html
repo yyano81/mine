@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オリーブヤング コスメ使い方ガイド</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #f9a8d4;
+            --light-pink: #fdf2f8;
+            --accent-purple: #c084fc;
+            --light-purple: #faf5ff;
+            --text-color: #4a5568;
+            --border-color: #fbcfe8;
+        }
+
+        body {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            background-color: #fffaf0;
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(249, 168, 212, 0.2);
+            border: 3px solid #fbe7f1;
+        }
+
+        h1 {
+            font-family: 'Kiwi Maru', serif;
+            text-align: center;
+            color: #db2777;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #9d174d;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        /* タブデザイン */
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid var(--primary-pink);
+            background-color: #fff;
+            color: #db2777;
+            border-radius: 12px;
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .tab-button.active-1 {
+            background-color: #fce7f3;
+            border-color: #ec4899;
+            color: #be185d;
+            box-shadow: 0 4px 10px rgba(236, 72, 153, 0.2);
+        }
+
+        .tab-button.active-2 {
+            background-color: #f3e8ff;
+            border-color: #a855f7;
+            color: #6b21a8;
+            box-shadow: 0 4px 10px rgba(168, 85, 247, 0.2);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* アイテムカード */
+        .item-card {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 18px;
+            margin-bottom: 20px;
+            border: 1.5px solid #f3e8ff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .item-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background-color: var(--accent-purple);
+        }
+
+        .course-1 .item-card::before {
+            background-color: #ec4899;
+        }
+
+        .course-2 .item-card::before {
+            background-color: #8b5cf6;
+        }
+
+        .item-title-ko {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 2px;
+        }
+
+        .item-title-jp {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .step-badge {
+            background-color: #fbcfe8;
+            color: #9d174d;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .usage-box {
+            background-color: #fafafa;
+            border-radius: 10px;
+            padding: 12px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .usage-title {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .point-tag {
+            display: inline-block;
+            background-color: #fff3bf;
+            color: #856404;
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 5px;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        .caution {
+            color: #e11d48;
+            font-size: 0.82rem;
+            margin-top: 5px;
+        }
+
+        /* ヘアケア・スペシャルケア特別セクション */
+        .special-section {
+            background-color: #fff0f5;
+            border-radius: 15px;
+            padding: 18px;
+            margin-top: 30px;
+            border: 2px dashed #f9a8d4;
+        }
+
+        .special-title {
+            text-align: center;
+            font-weight: bold;
+            color: #db2777;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>♡ Olive Young Choice ♡</h1>
+    <div class="subtitle">ご購入コスメの日本語使い方ガイド</div>
+
+    <!-- タブ切り替えボタン -->
+    <div class="tab-container">
+        <button class="tab-button active-1" onclick="switchTab('course1', this, 'active-1')">
+            ✨ リッチ＆プレミアムコース<br><small style="font-weight: normal;">(豊かなハリ＆極上の潤いケア)</small>
+        </button>
+        <button class="tab-button" onclick="switchTab('course2', this, 'active-2')">
+            🌿 デイリー＆スマートコース<br><small style="font-weight: normal;">(毛穴・キメ整え＆バリア機能ケア)</small>
+        </button>
+    </div>
+
+    <!-- コース 1 (旧60代向け：エイジング・高保湿・ハリ重視) -->
+    <div id="course1" class="tab-content course-1 active">
+        
+        <div class="item-card">
+            <div class="item-title-ko">VT 리들샷 100 에센스</div>
+            <div class="item-title-jp">
+                VT リードルショット 100
+                <span class="step-badge">夜・洗顔直後</span>
+            </div>
+            <div class="usage-box">
+                <div class="usage-title">🌸 使い方手順</div>
+                夜の洗顔後、スキンケアの「一番最初」に使用します。<br>
+                適量を手に取り、お顔全体にやさしく塗布します。指先で軽く押さえ込むように（導入を促すイメージで）なじませます。
+                <div class="point-tag">💡 ここがポイント</div>
+                毎日使える100を使用。後から重ねる美容液やクリームの浸透感を高め、お肌の奥（角質層）まで潤いを届けるベースを作ります。チクチク感は美容針（天然マイクロニードル）による正常な反応です。
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="item-title-ko">리쥬란 힐러 턴오버 앰플 듀얼</div>
+            <div class="item-title-jp">
+                リジュラン ヒーラー ターンオーバー アンプル デュアル
+                <span class="step-badge">朝・夜 美容液</span>
+            </div>
+            <div class="usage-box">
+                <div class="usage-title">🌸 使い方手順</div>
+                化粧水でお肌を整えた後（またはリードルショットの後）、スポイト1回分を取り、顔全体から首元までやさしく伸ばします。手で包み込むようにハンドプレスしてしっかり馴染ませてください。
+                <div class="point-tag">💡 ここがポイント</div>
+                皮膚科美容でも人気のサーモン注射成分（c-PDRN）配合。弾力不足や乾燥による小じわが気になる肌にツヤとツヤ感のあるハリを与えます。
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="item-title-ko">바이오힐보 프로바이오덤™ 콜라겐 리프팅</div>
+            <div class="item-title-jp">
+                バイオヒールボ プロバイオダーム コラーゲン リフティング
+                <span class="step-badge">朝・夜 仕上げ</span>
+            </div>
+            <div class="usage-box">
+                <div class="usage-title">🌸 使い方手順</div>
+                スキンケアの最後に使用します。パール大を手にとり、頬や額、あご、首筋に向かって持ち上げるように引き伸ばしながら塗り込みます。
+                <div class="point-tag">💡 ここがポイント</div>
+                別名「塗るハイフ」とも呼ばれるタンタン（弾力）クリーム。高い保湿力とコラーゲン成分で、お肌にしっかりフタをして翌朝までハリ感をキープします。
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="item-title-ko">리슬립 슬립케어 농축 스프레드 / パック</div>
+            <div class="item-title-jp">
+                RE-SLEEP スリープケア 濃縮スプレッドパック
+                <span class="step-badge">夜の特別ケア</span>
+            </div>
+            <div class="usage-box">
+                <div class="usage-title">🌸 使い方手順</div>
+                週に2〜3回、夜のスキンケアの最後に塗ってそのまま就寝します（洗い流し不要）。乾燥が特に気になる部分には少し厚めに重ねてください。
+                <div class="point-tag">💡 ここがポイント</div>
+                睡眠中の集中保湿パック。寝ている間にお肌に豊かな潤いをチャージし、翌朝洗顔した時のしっとりモチモチ感が高まります。
+            </div>
+        </div>
+
+    </div>
+
+    <!-- コース 2 (旧30代向け：毛穴・ターンオーバー・キメ重視) -->
+    <div id="course2" class="tab-content course-2">
+
+        <div class="item-card">
+            <div class="item-title-ko">VT 리들샷 300 에센스</div>
+            <div class="item-title-jp">
+                VT リードルショット 300
+                <span class="step-badge">3日に1回・夜</span>
+            </div>
+            <div class="usage-box">
+                <div class="usage-title">🌿 使い方手順</div>
+                夜の洗顔後すぐ、スキンケアの最初に使用します。適量を手にとり、毛穴や肌のゴワつきが気になる部分を中心に塗り広げます。
+                <div class="point-tag">💡 ここがポイント</div>
+                100よりも少し刺激が強い3日周期のスペシャルケア。ターンオーバーを促し、毛穴の目立ちや肌のキメを滑らかに整えます。
+                <div class="caution">※強めのチクチク感があります。使用した日はしっかりと保湿を行ってください。</div>
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="item-title-ko">리쥬란 힐러 턴오버 앰플 듀얼</div>
+            <div class="item-title-jp">
+                リジュラン ヒーラー ターンオーバー アンプル デュアル
+                <span class="step-badge">朝・夜 美容液</span>
+            </div>
+            <div class="usage-box">
+                <div class="usage-title">🌿 使い方手順</div>
+                導入液や化粧水の後、数滴を手に取り顔全体になじませます。日焼けや乾燥でバリア機能が低下した肌のダメージケアに効果的です。
+                <div class="point-tag">💡 ここがポイント</div>
+                肌の代謝（ターンオーバー）を正常化し、ニキビ跡の赤みや肌トラブルを防いで健康的な透明感のある肌へ導きます。
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="item-title-ko">바이오힐보 프로바이오덤™ 콜라겐</div>
+            <div class="item-title-jp">
+                バイオヒールボ プロバイオダーム コラーゲン
+                <span class="step-badge">朝・夜 保湿</span>
+            </div>
+            <div class="usage-box">
+                <div class="usage-title">🌿 使い方手順</div>
+                美容液の後、適量を手に取り顔全体に薄く伸ばします。朝のメイク前は少量をしっかり馴染ませるとメイク崩れを防げます。
+                <div class="point-tag">💡 ここがポイント</div>
+                毛穴のたるみやたるみ毛穴（縦毛穴）のケアに最適。乳酸菌（プロバイオティクス）の力で肌のバリア機能を強めます。
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="item-title-ko">리슬립 슬립케어 농축 스프레드</div>
+            <div class="item-title-jp">
+                RE-SLEEP スリープケア 濃縮スプレッド
+                <span class="step-badge">夜の水分補給</span>
+            </div>
+            <div class="usage-box">
+                <div class="usage-title">🌿 使い方手順</div>
+                お肌が疲れていると感じる日や、リードルショット300を使った日の夜、最後の仕上げにスリーピングパックとして塗って寝ます。
+                <div class="point-tag">💡 ここがポイント</div>
+                エアコンや外気で水分が奪われたお肌に水分膜を作り、一晩中水分バランスを整えてくれます。
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 共通：ヘアケア情報 -->
+    <div class="special-section">
+        <div class="special-title">💇‍♀️ 共通ヘアケアアイテムの使い方</div>
+        <div class="item-title-ko">어노브 딥 데미지 리페어 헤어</div>
+        <div class="item-title-jp">UNOVE (アノーブ) ディープダメージリペアー トリートメント</div>
+        <div class="usage-box" style="background-color: #fff;">
+            <strong>【使用方法】</strong><br>
+            1. シャンプー後、手でしっかり髪の水気を切ります。<br>
+            2. 適量を手にとり、傷みが気になる毛先を中心に揉み込むようになじませます。<br>
+            3. 2〜3分置いてから、ぬるま湯ですすぎ流してください。<br>
+            <span style="color: #db2777; font-size: 0.85rem;">★タンパク質補給効果が高く、サロン帰りのような指通りサラサラのツヤ髪になります！</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        ※リードルショット100と300は同時に併用せず、日によって使い分けるのがおすすめです♪
+    </div>
+</div>
+
+<script>
+    function switchTab(courseId, btnElement, activeClass) {
+        // すべてのコンテンツを非表示
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => content.classList.remove('active'));
+
+        // すべてのボタンの active クラスを解除
+        const buttons = document.querySelectorAll('.tab-button');
+        buttons.forEach(btn => {
+            btn.classList.remove('active-1', 'active-2');
+        });
+
+        // 選択されたコンテンツとボタンをアクティブに
+        document.getElementById(courseId).classList.add('active');
+        btnElement.classList.add(activeClass);
+    }
+</script>
+
+</body>
+</html>
